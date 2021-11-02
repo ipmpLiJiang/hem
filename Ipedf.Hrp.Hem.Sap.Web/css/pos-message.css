@@ -1,0 +1,18 @@
+.mainTable .page-header {
+	margin-bottom: 0;padding-bottom: 0;margin-top: 20px;
+}
+.mainTable .page-header h4 {
+	text-align: center;
+}
+.mainTable .page-header h4 small {
+	margin: 0 1.5em;
+}
+.btnGroup {
+	margin-bottom: 5px;
+}
+.mainTable .panel {
+	margin-bottom: 5px;
+}
+.pagination {
+	margin: 0;
+}

@@ -1,0 +1,359 @@
+﻿A:link,A:active,A:visited{TEXT-DECORATION:none ;Color:#4455aa}
+A:hover{TEXT-DECORATION: underline;Color:#ff0000}
+BODY
+{
+	FONT-FAMILY:  宋体;
+	font-size:9pt;
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color:  #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+	/*background-image: url("../images/msbackground.png");*/
+}
+TABLE
+{
+  font-size:9pt;
+  font-family: 宋体;
+  width:100%;
+
+}
+TABLE.NOEXPAND
+{
+  width:0%;
+  cursor:hand;
+}
+TABLE.tabPageTable
+{
+  width:0%;
+}
+TD
+{
+    height :23px;
+}
+TD.TabPageItemSelected
+{
+  COLOR: #000000;
+  vertical-align : bottom;
+  font-weight:bold ;
+  background-color:#FFFFFF;
+  font-size:9pt;
+  /*background-image: url("styleimage/tabpageitemselected.gif");*/
+  height:20px;
+}
+TD.TabPageItemSelectedright
+{
+  /*background-image: url("styleimage/tabpageitemselectedright.gif");*/
+  height:20px;
+  background-repeat :no-repeat ;
+  width:10px;
+}
+TD.TabPageItemSelectedleft
+{
+  /*background-image: url("styleimage/tabpageitemselectedleft.gif");*/
+  height:20px;
+}
+tr.SelectedContentRow
+{
+  background-color:#d2dcf7;
+}
+TD.TabPageItem
+{
+  font-size:9pt;
+  font-weight:bold ;
+  background-color:#FFFFFF;
+  /*background-image: url("styleimage/tabpageitem.gif");*/
+  height:20px;
+}
+TD.TabPageItemleft
+{
+  /*background-image: url("styleimage/tabpageitemleft.gif");*/
+  height:20px;
+}
+TD.TabPageItemright
+{
+  /*background-image: url("styleimage/tabpageitemright.gif");*/
+  height:20px;
+  background-repeat :no-repeat ;
+  width:10px;
+}
+.TDLINE
+{
+  height :3px;
+  /*background-image: url("images/handle03_004.gif");*/
+}
+TD.stdColumnTitle
+{
+  COLOR: #000000;
+  height:18px;
+  font-size: 12px;
+  text-align:center;
+  /*background-image:url("styleimage/work01_04.gif");*/
+}
+TD.StdColumnContentRed
+{
+  COLOR:#FF0000;
+}
+TD.StdFieldLabel
+{
+  text-align:right;
+}
+.INPUTTEXT
+{
+  font-size:9pt;
+}
+.READONLYINPUT
+{
+  border-width:0px;
+  font-size:9pt;
+  background-color:transparent;
+}
+.READONLYINPUTRED
+{
+  border-width:0px;
+  font-size:9pt;
+  COLOR: #FF0000;
+  background-color:transparent;
+}
+.INPUTLINKOVER
+{
+  border-width:0px;
+  font-size:9pt;
+  color:#0000FF;
+  cursor:hand;
+  text-underline-position:below;
+  text-decoration:underline;
+  background-color:transparent;
+
+}
+.INPUTLINKOUT
+{
+  border-width:0px;
+  font-size:9pt;
+  color:#0000FF;
+  cursor:hand;
+  background-color:transparent;
+
+}
+.INPUTSELECT
+{
+}
+.SelectedContentRow
+{
+}
+.INPUTBUTTON
+{
+  border-style:solid;
+  border-width:1px;
+  border-color:#666666;
+  /*background-image:url("styleimage/work01_04.gif");*/
+  font-size:9pt;
+}
+.divclass
+{
+  position: absolute ;
+  border-style:solid;
+  border-color:#3E96D5;
+  background-color:#f1f3fa;
+  border-width:1px;
+  visibility:hidden;
+}
+.div_RightMenu
+{
+    z-index:30000;
+    text-align:left;    
+    cursor: default;
+    position: absolute;
+    background-color:#FAFFF8;
+    width:100px;
+    height:auto;
+    border: 1px solid #333333;
+    display:none;
+    filter:progid:DXImageTransform.Microsoft.Shadow(Color=#333333,Direction=120,strength=5);    
+}
+.divMenuItem
+{
+    height:17px;
+    color:Black;
+    font-family:宋体;
+    vertical-align:middle;
+    font-size:10pt;
+    margin-bottom:3px;
+    cursor:hand;
+    padding-left:30px;
+    padding-top:2px;
+}
+.lockTitleRowDIV
+{
+   overflow:auto;
+   scrollbar-face-color:9999ff;
+   height:expression((document.body.clientHeight-this.offsetTop-100>this.children[0].offsetHeight)?(this.children[0].offsetHeight+160) : (document.body.clientHeight-this.offsetTop-100));
+   width:expression(document.body.clientWidth-20);
+}
+.fixedHeaderTr
+{
+   z-index:20;
+   position:relative;
+   /*top:expression(this.offsetParent.scrollTop);*/
+   top:expression(document.getElementById("lockContainerDiv").scrollTop);
+   
+}
+/*add by xiedy at 2009-4-9*/
+.firstfixedColunm
+{
+  z-index: 20;
+  position: relative;
+  top:expression(document.getElementById("lockContainerDiv").top);
+  left: expression(document.getElementById("lockContainerDiv").scrollLeft); 
+  background-image:url("styleimage/work01_04.gif");
+}
+.fixedColunm
+{	
+  background-color:#FAFFF8;
+  z-index: 10;
+  position: relative;
+  left: expression(document.getElementById("lockContainerDiv").scrollLeft); 
+}
+.resetColunm
+{
+ background-color:#FFFFFF;
+ z-index: 10;
+ position: relative;
+ left:expression(this.Left); 
+}
+/*输入控件样式*/
+INPUT.search-normal
+{ 
+	COLOR: #292929;
+	BORDER:1px solid #0099CC;
+	BACKGROUND-COLOR: #fff; 
+}
+INPUT.search-focus
+{ 
+	COLOR:#0099CC; 
+	BORDER:1px solid #0099CC;
+	BACKGROUND-COLOR: #EDFCFE;
+}
+/*列表控件样式*/
+
+/*常规行样式*/
+.RowStyle
+{
+	height:20px;
+	/*BACKGROUND-COLOR: #FFFFFF;*/
+}
+/*常规行样式*/
+.RowStyle TD
+{
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-top-color: #b5d6e6;
+	border-bottom-color: #b5d6e6;
+	border-left-color: #b5d6e6;
+	border-right-color:#b5d6e6;
+	white-space:nowrap;
+	
+}
+/*间隔行样式*/
+.AlternatingRowStyle
+{
+	/*BACKGROUND-COLOR: #FFFFFF;*/
+	height:20px;
+}
+/*间隔行样式*/
+.AlternatingRowStyle TD
+{
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-top-color: #b5d6e6;
+	border-bottom-color: #b5d6e6;
+	border-left-color: #b5d6e6;
+	border-right-color:#b5d6e6;
+}
+/*表头样式*/
+.HeaderStyle
+{      
+	height:20px;
+	text-align:left;
+	background-image: url("../images/xp/tab_bg.gif");
+	
+}
+/*表头样式*/
+.HeaderStyle TH
+{
+    border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-top-color: #b5d6e6;
+	border-bottom-color: #b5d6e6;
+	border-left-color: #b5d6e6;
+	border-right-color:#b5d6e6;
+	font-weight:normal; 
+	white-space:nowrap;
+}
+/*分页样式*/
+.PagerStyle
+{
+	color:#FFFFFF;
+	height:20px;
+	/*BACKGROUND-COLOR: #FFFFFF;*/
+}
+.FooterStyle
+{
+	color:#330099;
+	height:20px;
+	/*BACKGROUND-COLOR: #FFFFFF;*/
+}
+.FooterStyle TD
+{
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-top-color: #b5d6e6;
+	border-bottom-color: #b5d6e6;
+	border-left-color: #b5d6e6;
+	border-right-color:#b5d6e6;
+	white-space:nowrap;
+}
+.SelectedRowStyle
+{
+	color:#b5d6e6;
+	/*BACKGROUND-COLOR: #FFFFFF;*/
+}
+.EditRowStyle
+{
+	font-size:12px;
+	height:20px;
+	/*BACKGROUND-COLOR: #FFFFFF;*/
+}
+/*首页LOGO*/
+.htm_logo
+{
+	/*color: #709900; */
+	font-size: 14px;
+	font-weight:bold
+}

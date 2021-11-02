@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{595B3B05-82B4-4C91-B226-C89A18A6F7E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ipedf.Hrp.Hem.Sap.BizLogic</RootNamespace>
+    <AssemblyName>Ipedf.Hrp.Hem.Sap.BizLogic</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ipedf.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\Ipedf.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ipedf.Core.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\Ipedf.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\zpdll\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\zpdll\sapnco_utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BizLogicObject_HEM_B_STAFF_REWARD.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF_MEMBER.cs" />
+    <Compile Include="BizLogicObject_HEM_B_USER_LOGIN.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF_TYPE.cs" />
+    <Compile Include="BizLogicObject_HEM_SAP.cs" />
+    <Compile Include="HEM_CODEFILE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BizLogicObject_HEM_B_USER.cs" />
+    <Compile Include="BizLogicObject_HEM_B_RECRUIT_POSTER.cs" />
+    <Compile Include="BizLogicObject_V_USER_LOGIN_INFO.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF_EDUCATION.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF_WORK.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF_PROJECT.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF_ESSAY.cs" />
+    <Compile Include="BizLogicObject_SYS_DATA_TYPE.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF_APPLY.cs" />
+    <Compile Include="BizLogicObject_V_HEM_B_RECRUIT_POSTER.cs" />
+    <Compile Include="BizLogicObject_V_HEM_B_STAFF_APPLY.cs" />
+    <Compile Include="BizLogicObject_HEM_B_PHONE_MSSAGE.cs" />
+    <Compile Include="ServiceContract_HEM_B_PHONE_MSSAGE.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_REWARD.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_MEMBER.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_TYPE.cs" />
+    <Compile Include="ToolHelper.cs" />
+    <Compile Include="WebServiceHelper.cs" />
+    <Compile Include="BizLogicObject_V_HEM_B_PHONE_CALLBARK.cs" />
+    <Compile Include="BizLogicObject_V_HEM_APPLY_PHONE_MSSAGE.cs" />
+    <Compile Include="ServiceContract_HEM_B_RECRUIT_POSTER.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_APPLY.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_EDUCATION.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_ESSAY.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_PROJECT.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_WORK.cs" />
+    <Compile Include="ServiceContract_HEM_B_USER.cs" />
+    <Compile Include="ServiceContract_HEM_B_USER_LOGIN.cs" />
+    <Compile Include="ServiceContract_HEM_SAP.cs" />
+    <Compile Include="ServiceContract_SYS_DATA_TYPE.cs" />
+    <Compile Include="ServiceContract_V_USER_LOGIN_INFO.cs" />
+    <Compile Include="ServiceContract_V_HEM_APPLY_PHONE_MSSAGE.cs" />
+    <Compile Include="ServiceContract_V_HEM_B_PHONE_CALLBARK.cs" />
+    <Compile Include="ServiceContract_V_HEM_B_RECRUIT_POSTER.cs" />
+    <Compile Include="ServiceContract_V_HEM_B_STAFF_APPLY.cs" />
+    <Compile Include="BizLogicObject_V_HEM_B_RECRUIT_POSTER_STAFF.cs" />
+    <Compile Include="ServiceContract_V_HEM_B_RECRUIT_POSTER_STAFF.cs" />
+    <Compile Include="ServiceContract_V_HEM_B_STAFF.cs" />
+    <Compile Include="BizLogicObject_V_HEM_B_STAFF.cs" />
+    <Compile Include="ServiceContract_V_HEM_B_USER_STAFF.cs" />
+    <Compile Include="BizLogicObject_V_HEM_B_USER_STAFF.cs" />
+    <Compile Include="BizLogicObject_V_HEM_B_STAFF_APPLY_NPOI.cs" />
+    <Compile Include="ServiceContract_V_HEM_B_STAFF_APPLY_NPOI.cs" />
+    <Compile Include="BizLogicObject_V_HEM_STAFF_NPOI_ALL.cs" />
+    <Compile Include="ServiceContract_V_HEM_STAFF_NPOI_ALL.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF_APPLY_N.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_APPLY_N.cs" />
+    <Compile Include="BizLogicObject_V_HEM_B_STAFF_APPLY_N.cs" />
+    <Compile Include="ServiceContract_V_HEM_B_STAFF_APPLY_N.cs" />
+    <Compile Include="BizLogicObject_HEM_B_STAFF_REAL.cs" />
+    <Compile Include="ServiceContract_HEM_B_STAFF_REAL.cs" />
+    <Compile Include="ServiceContract_V_HEM_B_STAFF_EXT.cs" />
+    <Compile Include="BizLogicObject_V_HEM_B_STAFF_EXT.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ipedf.Hrp.Hem.Sap.DataAccess\Ipedf.Hrp.Hem.Sap.DataAccess.csproj">
+      <Project>{AED74697-312A-455F-BE4E-BE4C04661C9C}</Project>
+      <Name>Ipedf.Hrp.Hem.Sap.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ipedf.Hrp.Hem.Sap.Entity\Ipedf.Hrp.Hem.Sap.Entity.csproj">
+      <Project>{42603400-D1A7-4C5F-9DD7-968D249DC09A}</Project>
+      <Name>Ipedf.Hrp.Hem.Sap.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

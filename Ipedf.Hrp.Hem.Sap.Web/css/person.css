@@ -1,0 +1,10 @@
+.titleTable .tableL > h4 a.atip {
+	background-color: #BFD6E1;
+	color: #337AB7;
+	text-decoration: none;
+}
+.titleTable .tableL > h4 a.atip:hover {
+	background-color: #33A695;
+	color: #fff;
+	text-decoration: none;
+}

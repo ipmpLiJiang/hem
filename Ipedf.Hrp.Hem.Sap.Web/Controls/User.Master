@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="Ipedf.Hrp.Hem.Sap.Web.Controls.User" %>
+
+<%@ Register src="Header.ascx" tagname="Header" tagprefix="uc1" %>
+<%@ Register src="Footer.ascx" tagname="Footer" tagprefix="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>欢迎加入华科附属协和医院</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="<%=ResolveClientUrl("~/css/bootstrap.css") %>" rel="stylesheet">
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+      <script src="<%=ResolveClientUrl("~/scripts/html5shiv.min.js") %>"></script>
+      <script src="<%=ResolveClientUrl("~/scripts/respond.min.js") %>"></script>
+    <![endif]-->
+    <style>
+		#alertNoticeWrap,#alertShrink{
+			position: fixed;bottom: 30px;
+		}
+		#alertShrink{
+			display: none;left: 3px;padding: 6px;bottom: 50px;
+		}
+	</style>
+    <link rel="stylesheet" type="text/css" href="<%=ResolveClientUrl("~/css/main.css") %>">
+    <link rel="stylesheet" type="text/css" href="<%=ResolveClientUrl("~/css/home.css") %>">
+    <script src="<%=ResolveClientUrl("~/scripts/jquery.min.js") %>"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <uc1:Header ID="Header1" runat="server" />
+        <div class="loginbg">
+		<div class="container">
+			<div class="row" id="mainbg">
+				<div class="col-md-2 col-sm-3 loginLeft" id="leftBg">
+					<ul id="mainNav" class="nav nav-pills nav-stacked">
+						<li><a href="<%=ResolveClientUrl("~/HEM_HPP/RECRUIT_STAFF_APPLY_LIST.aspx") %>">招聘信息</a></li>
+						<%--<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="resume.html">
+							   简历管理 <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+							    <li><a href="<%=ResolveClientUrl("~/HEM_HRS/STAFF_LIST.aspx") %>">简历列表</a></li>
+                                <li><a href="<%=ResolveClientUrl("~/HEM_HRS/STAFF_SKIP.aspx") %>">修改简历</a></li>
+                                <li><a href="<%=ResolveClientUrl("~/HEM_HRS/RESUME_PREVIEW.aspx") %>" target="_blank">查看简历</a></li>
+							   
+							</ul>
+						</li>--%>
+						<li><a href="<%=ResolveClientUrl("~/HEM_HRS/STAFF_LIST.aspx") %>">简历管理</a></li>
+						<li><a href="<%=ResolveClientUrl("~/HEM_HPP/STAFF_APPLY_LIST.aspx") %>">应聘信息</a></li>
+						<li class="dropdown">
+						  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						     个人信息管理 <span class="caret"></span>
+						  </a>
+						  <ul class="dropdown-menu">
+						     <li><a href="<%=ResolveClientUrl("~/HEM_HRS/UserModify.aspx") %>">修改个人基本信息</a></li>
+						     <li><a href="<%=ResolveClientUrl("~/HEM_HRS/FIND_PASSWORD.aspx") %>">修改密码</a></li>
+						     <li class="divider"></li>
+						     <%--<li><a href="#">其他分离的链接</a></li>--%>
+						  </ul>
+						</li>
+						<li><a href="#">其他</a></li>
+					</ul>
+				</div>
+				<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+				
+				</asp:ContentPlaceHolder>
+			</div>
+		</div>
+	</div>
+        <uc2:Footer ID="Footer1" runat="server" />
+    </div>
+    
+    <script type="text/javascript" charset="utf-8" src="<%=ResolveClientUrl("~/scripts/main.js") %>"></script>
+    </form>
+    <div id="alertNoticeWrap" style="width:342px">
+		<div id="alertNotice" class="col-sm-10">
+			<div class="alert fade in alert-success alert-dismissible" style="color:red; font-size: 18px;" role="alert">
+			  	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  		<span aria-hidden="true">&times;</span>
+			  	</button>
+			  	<strong>申请流程提示</strong>
+			  	1.保存简历后请点击【提交简历】按钮,提交会提示简历是否填写完整 
+                2.简历是否投放成功请查看【应聘信息】</br>
+                <strong>注意</strong>1.教育为必填信息、护理简历-往届生必须填写工作经历,未填写者直接影响应聘结果!
+			</div>
+		</div>
+		<button id="alertShrink" type="button" class="btn btn-info">
+			<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+		</button>
+	</div>
+    <script src="<%=ResolveClientUrl("~/scripts/bootstrap.min.js") %>"></script>
+    <script>
+        $(function () {
+            alertMessageEvent();
+        });
+        function alertMessageEvent() {
+            var _notice = $('#alertNotice');
+            var _shrink = $('#alertShrink');
+            _notice.on('close.bs.alert', function () {
+                _shrink.show();
+            })
+            _shrink.click(function () {
+                if (!_notice.children().length) {
+                    var _div = '<div class="alert fade in alert-success alert-dismissible" style="color:red" role="alert">'
+						  	+ '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'
+						  		+ '<span aria-hidden="true">&times;</span>'
+						  	+ '</button>'
+						  	+ '<strong>申请流程提示</strong>'
+						  	+ '1.保存简历后请点击【提交简历】按钮,提交会提示简历是否填写完整 '
+						  	+ '2.简历是否投放成功请查看【应聘信息】</br>'
+                            + '<strong>注意</strong> 1.教育为必填信息、护理简历-往届生必须填写工作经历,未填写者直接影响应聘结果!'
+						+ '</div>';
+                    _notice.append(_div);
+                    _shrink.hide();
+                }
+
+            });
+        }
+	</script>
+    
+</body>
+</html>

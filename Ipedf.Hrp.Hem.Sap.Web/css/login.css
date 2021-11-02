@@ -1,0 +1,13 @@
+.loginLeft {
+	
+}
+
+.wrapper{width: 880px;margin:50px auto;}
+.fontNormal{color: #444;font: 14px 'Microsoft YaHei','微软雅黑';}
+.wrapper .loginBox{width:390px;margin: 0 auto;border: 1px solid #BfD6E1;background-color: #FEFEFE;border-radius: 5px;}
+.wrapper .loginBox .loginCenter {padding: 24px;border:1px solid #dde0f8;background-color: #fff;}
+.wrapper .loginBox .loginCenter label {margin-bottom: 10px;background-color: #fff;}
+/*.wrapper .loginBox .loginCenter input{border: 1px solid #DDE0E8;}*/
+.wrapper .loginBox .loginSub{padding:20px;background-color: #F0F4F6;border-top: 1px solid #fff;}
+.wrapper .loginBox .loginBtn{width: 100px;height: 30px;color:#FFF;border:1px solid #98cce7;box-shadow: none;background-color: #85CFEE;float: right;}	
+.loginBox .loginBtn:HOVER {background-image: -moz-linear-gradient(to top, #B5DEF2, #85CFEE);}

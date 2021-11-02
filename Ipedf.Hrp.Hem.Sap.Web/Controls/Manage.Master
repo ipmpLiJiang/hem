@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Manage.Master.cs" Inherits="Ipedf.Hrp.Hem.Sap.Web.Controls.Manage" %>
+
+<%@ Register src="ManageHeader.ascx" tagname="Header" tagprefix="uc1" %>
+<%@ Register src="Footer.ascx" tagname="Footer" tagprefix="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>欢迎加入华科附属协和医院</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="<%=ResolveClientUrl("~/css/bootstrap.css") %>" rel="stylesheet">
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+      <script src="<%=ResolveClientUrl("~/scripts/html5shiv.min.js") %>"></script>
+      <script src="<%=ResolveClientUrl("~/scripts/respond.min.js") %>"></script>
+    <![endif]-->
+    <link href="<%=ResolveClientUrl("~/css/bootstrap.css") %>" rel="stylesheet">
+    
+    <script src="<%=ResolveClientUrl("~/scripts/jquery.min.js") %>"></script>
+    <script src="<%=ResolveClientUrl("~/scripts/admin.js") %>"></script>
+    <script src="<%=ResolveClientUrl("~/scripts/admin-home.js") %>"></script>
+    <link rel="stylesheet" type="text/css" href="<%=ResolveClientUrl("~/css/admin.css") %>">
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <uc1:Header ID="Header1" runat="server" />
+        <div class="container">
+		    <div class="row loginbg" id="mainbg">
+			    <div class="row mySection shadow">
+				    <div class="row">
+					    <span class="glyphicon glyphicon-home"></span>
+					    <a id="navOne" href="#">招聘启事</a>
+				    </div>
+				    <div class="row secContainer">
+					    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    				
+				        </asp:ContentPlaceHolder>
+				    </div>
+			    </div>	
+		    </div>
+	    </div>
+        <uc2:Footer ID="Footer1" runat="server" />
+    </div>
+    </form>
+</body>
+</html>

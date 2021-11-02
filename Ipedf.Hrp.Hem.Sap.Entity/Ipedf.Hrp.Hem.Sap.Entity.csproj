@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{42603400-D1A7-4C5F-9DD7-968D249DC09A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ipedf.Hrp.Hem.Sap.Entity</RootNamespace>
+    <AssemblyName>Ipedf.Hrp.Hem.Sap.Entity</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ipedf.Common">
+      <HintPath>..\Ipedf.Hrp.Hem.Sap.Web\DLLImport\Ipedf.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ipedf.Core.Web">
+      <HintPath>..\Ipedf.Hrp.Hem.Sap.Web\DLLImport\Ipedf.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityObject_HEM_B_RECRUIT_POSTER.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_APPLY.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_APPLY_N.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_EDUCATION.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_REWARD.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_MEMBER.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_ESSAY.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_PROJECT.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_REAL.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_WORK.cs" />
+    <Compile Include="EntityObject_HEM_B_USER.cs" />
+    <Compile Include="EntityObject_HEM_B_USER_LOGIN.cs" />
+    <Compile Include="EntityObject_HEM_B_STAFF_TYPE.cs" />
+    <Compile Include="EntityObject_SYS_DATA_TYPE.cs" />
+    <Compile Include="EntityObject_V_HEM_APPLY_PHONE_MSSAGE.cs" />
+    <Compile Include="EntityObject_V_HEM_B_PHONE_CALLBARK.cs" />
+    <Compile Include="EntityObject_V_HEM_B_RECRUIT_POSTER_STAFF.cs" />
+    <Compile Include="EntityObject_V_HEM_B_STAFF.cs" />
+    <Compile Include="EntityObject_V_HEM_B_STAFF_APPLY_ALL.cs" />
+    <Compile Include="EntityObject_V_HEM_B_STAFF_APPLY_N.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EntityObject_V_HEM_B_STAFF_APPLY_NPOI.cs" />
+    <Compile Include="EntityObject_V_HEM_B_STAFF_EXT.cs" />
+    <Compile Include="EntityObject_V_HEM_B_USER_STAFF.cs" />
+    <Compile Include="EntityObject_V_HEM_STAFF_NPOI_ALL.cs" />
+    <Compile Include="EntityObject_V_USER_LOGIN_INFO.cs" />
+    <Compile Include="HEM_B_STAFF_HEADER.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EntityObject_V_HEM_B_RECRUIT_POSTER.cs" />
+    <Compile Include="EntityObject_V_HEM_B_STAFF_APPLY.cs" />
+    <Compile Include="EntityObject_HEM_B_PHONE_MSSAGE.cs" />
+    <Compile Include="EntityObject_HEM_B_PHONE_CALLBARK.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

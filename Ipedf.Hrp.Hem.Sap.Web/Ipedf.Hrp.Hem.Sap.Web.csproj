@@ -1,0 +1,1377 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95FB6915-2AC1-45B6-9760-383351FC9308}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ipedf.Hrp.Hem.Sap.Web</RootNamespace>
+    <AssemblyName>Ipedf.Hrp.Hem.Sap.Web</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FredCK.FCKeditorV2, Version=2.6.3.22452, Culture=neutral, PublicKeyToken=4f86767c9b519a06, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL" />
+    <Reference Include="Ipedf.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\Ipedf.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ipedf.Core.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\Ipedf.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Ipedf.Web.Control, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\Ipedf.Web.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\zpdll\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <HintPath>..\..\..\zpdll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\zpdll\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
+      <HintPath>..\..\..\zpdll\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils, Version=3.0.0.42, Culture=neutral, PublicKeyToken=50436dca5c7f7d23, processorArchitecture=x86">
+      <HintPath>..\..\..\zpdll\sapnco_utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HEM_HRS\STAFF_SEND_REWARD.aspx" />
+    <Content Include="HEM_HRS\STAFF_SEND_MEMBER.aspx" />
+    <Content Include="HEM_HRS\STAFF_NURSE_MEMBER.aspx" />
+    <Content Include="HEM_HRS\STAFF_NURSE_REWARD.aspx" />
+    <Content Include="HEM_HRS\STAFF_REWARD.aspx" />
+    <Content Include="HEM_HRS\STAFF_MEMBER.aspx" />
+    <Content Include="UserLogin.aspx" />
+    <Content Include="Images\calender.gif" />
+    <Content Include="Images\Public\Icon1.gif" />
+    <Content Include="scripts\common.js" />
+    <Content Include="scripts\dateSelect.js" />
+    <Content Include="scripts\input.js" />
+    <Content Include="scripts\My97DatePicker\calendar.js" />
+    <Content Include="scripts\My97DatePicker\lang\en.js" />
+    <Content Include="scripts\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="scripts\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="scripts\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="scripts\My97DatePicker\skin\datePicker1.gif" />
+    <Content Include="scripts\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="scripts\My97DatePicker\skin\default\img.gif" />
+    <Content Include="scripts\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="scripts\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="scripts\My97DatePicker\WdatePicker.js" />
+    <Content Include="scripts\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="scripts\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="scripts\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="scripts\My97DatePicker\开发包\readme.txt" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="scripts\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="css\common.css" />
+    <Content Include="css\core.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HEM_HRS\STAFF_SEND_REWARD.aspx.cs">
+      <DependentUpon>STAFF_SEND_REWARD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_REWARD.aspx.designer.cs">
+      <DependentUpon>STAFF_SEND_REWARD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_MEMBER.aspx.cs">
+      <DependentUpon>STAFF_SEND_MEMBER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_MEMBER.aspx.designer.cs">
+      <DependentUpon>STAFF_SEND_MEMBER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_MEMBER.aspx.cs">
+      <DependentUpon>STAFF_NURSE_MEMBER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_MEMBER.aspx.designer.cs">
+      <DependentUpon>STAFF_NURSE_MEMBER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_REWARD.aspx.cs">
+      <DependentUpon>STAFF_NURSE_REWARD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_REWARD.aspx.designer.cs">
+      <DependentUpon>STAFF_NURSE_REWARD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_REWARD.aspx.cs">
+      <DependentUpon>STAFF_REWARD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_REWARD.aspx.designer.cs">
+      <DependentUpon>STAFF_REWARD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_MEMBER.aspx.cs">
+      <DependentUpon>STAFF_MEMBER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_MEMBER.aspx.designer.cs">
+      <DependentUpon>STAFF_MEMBER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Old_App_Code\Manage_Page.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Old_App_Code\NPOIHelper.cs" />
+    <Compile Include="Controls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Manage.Master.cs">
+      <DependentUpon>Manage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Manage.Master.designer.cs">
+      <DependentUpon>Manage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ManageHeader.ascx.cs">
+      <DependentUpon>ManageHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ManageHeader.ascx.designer.cs">
+      <DependentUpon>ManageHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_RESUME_PREVIEW.aspx.cs">
+      <DependentUpon>RECRUIT_RESUME_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_RESUME_PREVIEW.aspx.designer.cs">
+      <DependentUpon>RECRUIT_RESUME_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_DETAIL.aspx.cs">
+      <DependentUpon>RECRUIT_POSTER_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_DETAIL.aspx.designer.cs">
+      <DependentUpon>RECRUIT_POSTER_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_EDIT.aspx.cs">
+      <DependentUpon>RECRUIT_POSTER_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_EDIT.aspx.designer.cs">
+      <DependentUpon>RECRUIT_POSTER_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_LIST.aspx.cs">
+      <DependentUpon>RECRUIT_POSTER_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_LIST.aspx.designer.cs">
+      <DependentUpon>RECRUIT_POSTER_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_LIST_DUE.aspx.cs">
+      <DependentUpon>RECRUIT_POSTER_LIST_DUE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_LIST_DUE.aspx.designer.cs">
+      <DependentUpon>RECRUIT_POSTER_LIST_DUE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_APPLY.aspx.cs">
+      <DependentUpon>RECRUIT_STAFF_APPLY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_APPLY.aspx.designer.cs">
+      <DependentUpon>RECRUIT_STAFF_APPLY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_APPLY_LIST.aspx.cs">
+      <DependentUpon>RECRUIT_STAFF_APPLY_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_APPLY_LIST.aspx.designer.cs">
+      <DependentUpon>RECRUIT_STAFF_APPLY_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST.aspx.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST.aspx.designer.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\STAFF_APPLY_LIST.aspx.cs">
+      <DependentUpon>STAFF_APPLY_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\STAFF_APPLY_LIST.aspx.designer.cs">
+      <DependentUpon>STAFF_APPLY_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_LIST_PCD.aspx.cs">
+      <DependentUpon>RECRUIT_POSTER_LIST_PCD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_POSTER_LIST_PCD.aspx.designer.cs">
+      <DependentUpon>RECRUIT_POSTER_LIST_PCD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_PANDING.aspx.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_PANDING.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_PANDING.aspx.designer.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_PANDING.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_PASS.aspx.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_PASS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_PASS.aspx.designer.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_PASS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_Q.aspx.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_Q.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_Q.aspx.designer.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_Q.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_REVIEW.aspx.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_REVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_REVIEW.aspx.designer.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_REVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_FINISH.aspx.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_FINISH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_FINISH.aspx.designer.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_FINISH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_REJECT.aspx.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_REJECT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\RECRUIT_STAFF_LIST_REJECT.aspx.designer.cs">
+      <DependentUpon>RECRUIT_STAFF_LIST_REJECT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\STAFF_APPLY_DETAIL.aspx.cs">
+      <DependentUpon>STAFF_APPLY_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\STAFF_APPLY_DETAIL.aspx.designer.cs">
+      <DependentUpon>STAFF_APPLY_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\PHONE_CALLBARK_LIST.aspx.cs">
+      <DependentUpon>PHONE_CALLBARK_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\PHONE_CALLBARK_LIST.aspx.designer.cs">
+      <DependentUpon>PHONE_CALLBARK_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\APPLY_PHONE_MSSAGE_LIST.aspx.cs">
+      <DependentUpon>APPLY_PHONE_MSSAGE_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\APPLY_PHONE_MSSAGE_LIST.aspx.designer.cs">
+      <DependentUpon>APPLY_PHONE_MSSAGE_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\STAFF_REAL_LIST.aspx.cs">
+      <DependentUpon>STAFF_REAL_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\STAFF_REAL_LIST.aspx.designer.cs">
+      <DependentUpon>STAFF_REAL_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_LIST.aspx.cs">
+      <DependentUpon>STAFF_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_LIST.aspx.designer.cs">
+      <DependentUpon>STAFF_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_PROJECT.aspx.cs">
+      <DependentUpon>STAFF_NURSE_PROJECT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_PROJECT.aspx.designer.cs">
+      <DependentUpon>STAFF_NURSE_PROJECT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HPP\USER_STAFF_LIST.aspx.cs">
+      <DependentUpon>USER_STAFF_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HPP\USER_STAFF_LIST.aspx.designer.cs">
+      <DependentUpon>USER_STAFF_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_BASIC.aspx.cs">
+      <DependentUpon>STAFF_SEND_BASIC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_BASIC.aspx.designer.cs">
+      <DependentUpon>STAFF_SEND_BASIC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_EDUCATION.aspx.cs">
+      <DependentUpon>STAFF_SEND_EDUCATION.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_EDUCATION.aspx.designer.cs">
+      <DependentUpon>STAFF_SEND_EDUCATION.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_WORK.aspx.cs">
+      <DependentUpon>STAFF_SEND_WORK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_WORK.aspx.designer.cs">
+      <DependentUpon>STAFF_SEND_WORK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_PROJECT.aspx.cs">
+      <DependentUpon>STAFF_SEND_PROJECT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_PROJECT.aspx.designer.cs">
+      <DependentUpon>STAFF_SEND_PROJECT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_ESSAY.aspx.cs">
+      <DependentUpon>STAFF_SEND_ESSAY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_SEND_ESSAY.aspx.designer.cs">
+      <DependentUpon>STAFF_SEND_ESSAY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MsgTest.aspx.cs">
+      <DependentUpon>MsgTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MsgTest.aspx.designer.cs">
+      <DependentUpon>MsgTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scripts\public\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scripts\public\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scripts\public\Manage_Error.aspx.cs">
+      <DependentUpon>Manage_Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scripts\public\Manage_Error.aspx.designer.cs">
+      <DependentUpon>Manage_Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\RESUME_PREVIEW.aspx.cs">
+      <DependentUpon>RESUME_PREVIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\RESUME_PREVIEW.aspx.designer.cs">
+      <DependentUpon>RESUME_PREVIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Old_App_Code\User_Page.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_BASIC.aspx.cs">
+      <DependentUpon>STAFF_BASIC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_BASIC.aspx.designer.cs">
+      <DependentUpon>STAFF_BASIC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_EDUCATION.aspx.cs">
+      <DependentUpon>STAFF_EDUCATION.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_EDUCATION.aspx.designer.cs">
+      <DependentUpon>STAFF_EDUCATION.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_ESSAY.aspx.cs">
+      <DependentUpon>STAFF_ESSAY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_ESSAY.aspx.designer.cs">
+      <DependentUpon>STAFF_ESSAY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_PROJECT.aspx.cs">
+      <DependentUpon>STAFF_PROJECT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_PROJECT.aspx.designer.cs">
+      <DependentUpon>STAFF_PROJECT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_WORK.aspx.cs">
+      <DependentUpon>STAFF_WORK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_WORK.aspx.designer.cs">
+      <DependentUpon>STAFF_WORK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\UserModify.aspx.cs">
+      <DependentUpon>UserModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\UserModify.aspx.designer.cs">
+      <DependentUpon>UserModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\FIND_PASSWORD.aspx.cs">
+      <DependentUpon>FIND_PASSWORD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\FIND_PASSWORD.aspx.designer.cs">
+      <DependentUpon>FIND_PASSWORD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_FILEUPLOAD.aspx.cs">
+      <DependentUpon>STAFF_FILEUPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_FILEUPLOAD.aspx.designer.cs">
+      <DependentUpon>STAFF_FILEUPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_BASIC.aspx.cs">
+      <DependentUpon>STAFF_NURSE_BASIC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_BASIC.aspx.designer.cs">
+      <DependentUpon>STAFF_NURSE_BASIC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_EDUCATION.aspx.cs">
+      <DependentUpon>STAFF_NURSE_EDUCATION.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_EDUCATION.aspx.designer.cs">
+      <DependentUpon>STAFF_NURSE_EDUCATION.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_FILEUPLOAD.aspx.cs">
+      <DependentUpon>STAFF_NURSE_FILEUPLOAD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_FILEUPLOAD.aspx.designer.cs">
+      <DependentUpon>STAFF_NURSE_FILEUPLOAD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_WORK.aspx.cs">
+      <DependentUpon>STAFF_NURSE_WORK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_HRS\STAFF_NURSE_WORK.aspx.designer.cs">
+      <DependentUpon>STAFF_NURSE_WORK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scripts\public\User_Error.aspx.cs">
+      <DependentUpon>User_Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scripts\public\User_Error.aspx.designer.cs">
+      <DependentUpon>User_Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_SYS\MANAGE_USER_EDIT.aspx.cs">
+      <DependentUpon>MANAGE_USER_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_SYS\MANAGE_USER_EDIT.aspx.designer.cs">
+      <DependentUpon>MANAGE_USER_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_SYS\USER_LIST.aspx.cs">
+      <DependentUpon>USER_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_SYS\USER_LIST.aspx.designer.cs">
+      <DependentUpon>USER_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_SYS\MANAGE_USER_LIST.aspx.cs">
+      <DependentUpon>MANAGE_USER_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_SYS\MANAGE_USER_LIST.aspx.designer.cs">
+      <DependentUpon>MANAGE_USER_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_SYS\MANAGE_USER_ADD.aspx.cs">
+      <DependentUpon>MANAGE_USER_ADD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_SYS\MANAGE_USER_ADD.aspx.designer.cs">
+      <DependentUpon>MANAGE_USER_ADD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HEM_SYS\MANAGE_USER_PWD_EDIT.aspx.cs">
+      <DependentUpon>MANAGE_USER_PWD_EDIT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HEM_SYS\MANAGE_USER_PWD_EDIT.aspx.designer.cs">
+      <DependentUpon>MANAGE_USER_PWD_EDIT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageLogin.aspx.cs">
+      <DependentUpon>ManageLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageLogin.aspx.designer.cs">
+      <DependentUpon>ManageLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Old_App_Code\MyPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scripts\public\NullSession.aspx.cs">
+      <DependentUpon>NullSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scripts\public\NullSession.aspx.designer.cs">
+      <DependentUpon>NullSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scripts\public\Error_404.aspx.cs">
+      <DependentUpon>Error_404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scripts\public\Error_404.aspx.designer.cs">
+      <DependentUpon>Error_404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="scripts\public\Error_403.aspx.cs">
+      <DependentUpon>Error_403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="scripts\public\Error_403.aspx.designer.cs">
+      <DependentUpon>Error_403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="POSTER_HOME.aspx.cs">
+      <DependentUpon>POSTER_HOME.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="POSTER_HOME.aspx.designer.cs">
+      <DependentUpon>POSTER_HOME.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="POSTER_DETAIL.aspx.cs">
+      <DependentUpon>POSTER_DETAIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="POSTER_DETAIL.aspx.designer.cs">
+      <DependentUpon>POSTER_DETAIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FORGET_PASSWORD.aspx.cs">
+      <DependentUpon>FORGET_PASSWORD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FORGET_PASSWORD.aspx.designer.cs">
+      <DependentUpon>FORGET_PASSWORD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FORGET_PASSWORD1.aspx.cs">
+      <DependentUpon>FORGET_PASSWORD1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FORGET_PASSWORD1.aspx.designer.cs">
+      <DependentUpon>FORGET_PASSWORD1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ipedf.Hrp.Hem.Sap.BizLogic\Ipedf.Hrp.Hem.Sap.BizLogic.csproj">
+      <Project>{595B3B05-82B4-4C91-B226-C89A18A6F7E6}</Project>
+      <Name>Ipedf.Hrp.Hem.Sap.BizLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ipedf.Hrp.Hem.Sap.Entity\Ipedf.Hrp.Hem.Sap.Entity.csproj">
+      <Project>{42603400-D1A7-4C5F-9DD7-968D249DC09A}</Project>
+      <Name>Ipedf.Hrp.Hem.Sap.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataObject.txt" />
+    <Content Include="HEM_HPP\RECRUIT_RESUME_PREVIEW.aspx" />
+    <Content Include="HEM_HRS\RESUME_PREVIEW.aspx" />
+    <Content Include="Images\Public\doc.jpg" />
+    <Content Include="Images\Public\icon2.gif" />
+    <Content Include="Images\Public\Logo_Resume.png" />
+    <Content Include="ManageLogin.aspx" />
+    <Content Include="scripts\public\NullSession.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Footer.ascx" />
+    <Content Include="Controls\Header.ascx" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\home.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\PIE.htc" />
+    <Content Include="css\pos-message.css" />
+    <Content Include="Images\header.png" />
+    <Content Include="Images\headerbg.png" />
+    <Content Include="Images\u0.png" />
+    <Content Include="Images\u01.png" />
+    <Content Include="Images\u29.jpg" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\home.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\npm.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\User.Master" />
+    <Content Include="css\person.css" />
+    <Content Include="HEM_HPP\RECRUIT_POSTER_LIST.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_STAFF_APPLY.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_STAFF_APPLY_LIST.aspx" />
+    <Content Include="HEM_HPP\STAFF_APPLY_LIST.aspx" />
+    <Content Include="HEM_HRS\STAFF_BASIC.aspx" />
+    <Content Include="HEM_HRS\STAFF_EDUCATION.aspx" />
+    <Content Include="HEM_HRS\STAFF_ESSAY.aspx" />
+    <Content Include="HEM_HRS\STAFF_PROJECT.aspx" />
+    <Content Include="HEM_HRS\STAFF_WORK.aspx" />
+    <Content Include="scripts\person.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\Manage.Master" />
+    <Content Include="Controls\ManageHeader.ascx" />
+    <Content Include="css\admin.css" />
+    <Content Include="css\modaldiv.css" />
+    <Content Include="css\modaldiv2.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="HEM_HPP\RECRUIT_POSTER_DETAIL.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_POSTER_EDIT.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_POSTER_LIST_DUE.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_POSTER_LIST_PCD.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_STAFF_LIST.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_STAFF_LIST_PANDING.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_STAFF_LIST_PASS.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_STAFF_LIST_Q.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_STAFF_LIST_REVIEW.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_STAFF_LIST_FINISH.aspx" />
+    <Content Include="HEM_HPP\RECRUIT_STAFF_LIST_REJECT.aspx" />
+    <Content Include="HEM_HPP\STAFF_APPLY_DETAIL.aspx" />
+    <Content Include="HEM_HPP\PHONE_CALLBARK_LIST.aspx" />
+    <Content Include="HEM_HPP\APPLY_PHONE_MSSAGE_LIST.aspx" />
+    <Content Include="HEM_HRS\UserModify.aspx" />
+    <Content Include="HEM_HRS\FIND_PASSWORD.aspx" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\Public\Asking.png" />
+    <Content Include="Images\Public\Error.png" />
+    <Content Include="scripts\public\Error_404.aspx" />
+    <Content Include="scripts\public\Error_403.aspx" />
+    <Content Include="scripts\admin-home.js" />
+    <Content Include="scripts\admin.js" />
+    <Content Include="POSTER_HOME.aspx" />
+    <Content Include="POSTER_DETAIL.aspx" />
+    <Content Include="FORGET_PASSWORD.aspx" />
+    <Content Include="scripts\fckeditor\editor\css\behaviors\disablehandles.htc" />
+    <Content Include="scripts\fckeditor\editor\css\behaviors\showtableborders.htc" />
+    <Content Include="scripts\fckeditor\editor\css\fck_editorarea.css" />
+    <Content Include="scripts\fckeditor\editor\css\fck_internal.css" />
+    <Content Include="scripts\fckeditor\editor\css\fck_showtableborders_gecko.css" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_address.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_blockquote.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_div.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_h1.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_h2.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_h3.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_h4.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_h5.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_h6.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_p.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\block_pre.png" />
+    <Content Include="scripts\fckeditor\editor\css\images\fck_anchor.gif" />
+    <Content Include="scripts\fckeditor\editor\css\images\fck_flashlogo.gif" />
+    <Content Include="scripts\fckeditor\editor\css\images\fck_hiddenfield.gif" />
+    <Content Include="scripts\fckeditor\editor\css\images\fck_pagebreak.gif" />
+    <Content Include="scripts\fckeditor\editor\css\images\fck_plugin.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\common\fck_dialog_common.css" />
+    <Content Include="scripts\fckeditor\editor\dialog\common\fck_dialog_common.js" />
+    <Content Include="scripts\fckeditor\editor\dialog\common\images\locked.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\common\images\reset.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\common\images\unlocked.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_about.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_about\logo_fckeditor.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_about\logo_fredck.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_about\sponsors\spellchecker_net.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_anchor.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_button.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_checkbox.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_colorselector.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_div.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_docprops.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_docprops\fck_document_preview.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_flash.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_flash\fck_flash.js" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_flash\fck_flash_preview.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_form.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_hiddenfield.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_image.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_image\fck_image.js" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_image\fck_image_preview.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_link.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_link\fck_link.js" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_listprop.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_paste.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_radiobutton.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_replace.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_select.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_select\fck_select.js" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_smiley.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_source.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_specialchar.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_spellerpages.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\blank.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\controls.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\controlWindow.js" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\spellchecker.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\spellChecker.js" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\spellerStyle.css" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\wordWindow.js" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_table.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_tablecell.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_template.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_template\images\template1.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_template\images\template2.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_template\images\template3.gif" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_textarea.html" />
+    <Content Include="scripts\fckeditor\editor\dialog\fck_textfield.html" />
+    <Content Include="scripts\fckeditor\editor\dtd\fck_dtd_test.html" />
+    <Content Include="scripts\fckeditor\editor\dtd\fck_xhtml10strict.js" />
+    <Content Include="scripts\fckeditor\editor\dtd\fck_xhtml10transitional.js" />
+    <Content Include="scripts\fckeditor\editor\fckdebug.html" />
+    <Content Include="scripts\fckeditor\editor\fckdialog.html" />
+    <Content Include="scripts\fckeditor\editor\fckeditor.html" />
+    <Content Include="scripts\fckeditor\editor\fckeditor.original.html" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\browser.css" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\browser.html" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\frmactualfolder.html" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\frmcreatefolder.html" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\frmfolders.html" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\frmresourceslist.html" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\frmresourcetype.html" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\frmupload.html" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\ButtonArrow.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\Folder.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\Folder32.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\FolderOpened.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\FolderOpened32.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\FolderUp.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\ai.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\avi.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\bmp.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\cs.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\default.icon.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\dll.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\doc.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\exe.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\fla.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\gif.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\htm.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\html.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\jpg.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\js.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\mdb.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\mp3.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\pdf.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\png.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\ppt.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\rdp.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\swf.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\swt.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\txt.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\vsd.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\xls.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\xml.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\32\zip.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\ai.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\avi.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\bmp.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\cs.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\default.icon.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\dll.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\doc.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\exe.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\fla.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\gif.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\htm.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\html.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\jpg.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\js.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\mdb.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\mp3.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\pdf.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\png.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\ppt.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\rdp.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\swf.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\swt.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\txt.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\vsd.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\xls.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\xml.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\icons\zip.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\images\spacer.gif" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\js\common.js" />
+    <Content Include="scripts\fckeditor\editor\filemanager\browser\default\js\fckxml.js" />
+    <Content Include="scripts\fckeditor\editor\filemanager\connectors\aspx\config.ascx" />
+    <Content Include="scripts\fckeditor\editor\filemanager\connectors\aspx\connector.aspx" />
+    <Content Include="scripts\fckeditor\editor\filemanager\connectors\aspx\upload.aspx" />
+    <Content Include="scripts\fckeditor\editor\filemanager\connectors\aspx\~admin\fck\UpLoad\NEW  FASHION.jpg" />
+    <Content Include="scripts\fckeditor\editor\filemanager\connectors\aspx\~admin\fck\UpLoad\未命名.jpg" />
+    <Content Include="scripts\fckeditor\editor\filemanager\connectors\test.html" />
+    <Content Include="scripts\fckeditor\editor\filemanager\connectors\uploadtest.html" />
+    <Content Include="scripts\fckeditor\editor\images\anchor.gif" />
+    <Content Include="scripts\fckeditor\editor\images\arrow_ltr.gif" />
+    <Content Include="scripts\fckeditor\editor\images\arrow_rtl.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\angel_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\angry_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\broken_heart.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\cake.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\confused_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\cry_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\devil_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\embaressed_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\envelope.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\heart.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\kiss.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\lightbulb.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\omg_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\regular_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\sad_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\shades_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\teeth_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\thumbs_down.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\thumbs_up.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\tounge_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\whatchutalkingabout_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\smiley\msn\wink_smile.gif" />
+    <Content Include="scripts\fckeditor\editor\images\spacer.gif" />
+    <Content Include="scripts\fckeditor\editor\js\fckadobeair.js" />
+    <Content Include="scripts\fckeditor\editor\js\fckeditorcode_gecko.js" />
+    <Content Include="scripts\fckeditor\editor\js\fckeditorcode_ie.js" />
+    <Content Include="scripts\fckeditor\editor\lang\af.js" />
+    <Content Include="scripts\fckeditor\editor\lang\ar.js" />
+    <Content Include="scripts\fckeditor\editor\lang\bg.js" />
+    <Content Include="scripts\fckeditor\editor\lang\bn.js" />
+    <Content Include="scripts\fckeditor\editor\lang\bs.js" />
+    <Content Include="scripts\fckeditor\editor\lang\ca.js" />
+    <Content Include="scripts\fckeditor\editor\lang\cs.js" />
+    <Content Include="scripts\fckeditor\editor\lang\da.js" />
+    <Content Include="scripts\fckeditor\editor\lang\de.js" />
+    <Content Include="scripts\fckeditor\editor\lang\el.js" />
+    <Content Include="scripts\fckeditor\editor\lang\en-au.js" />
+    <Content Include="scripts\fckeditor\editor\lang\en-ca.js" />
+    <Content Include="scripts\fckeditor\editor\lang\en-uk.js" />
+    <Content Include="scripts\fckeditor\editor\lang\en.js" />
+    <Content Include="scripts\fckeditor\editor\lang\eo.js" />
+    <Content Include="scripts\fckeditor\editor\lang\es.js" />
+    <Content Include="scripts\fckeditor\editor\lang\et.js" />
+    <Content Include="scripts\fckeditor\editor\lang\eu.js" />
+    <Content Include="scripts\fckeditor\editor\lang\fa.js" />
+    <Content Include="scripts\fckeditor\editor\lang\fi.js" />
+    <Content Include="scripts\fckeditor\editor\lang\fo.js" />
+    <Content Include="scripts\fckeditor\editor\lang\fr-ca.js" />
+    <Content Include="scripts\fckeditor\editor\lang\fr.js" />
+    <Content Include="scripts\fckeditor\editor\lang\gl.js" />
+    <Content Include="scripts\fckeditor\editor\lang\gu.js" />
+    <Content Include="scripts\fckeditor\editor\lang\he.js" />
+    <Content Include="scripts\fckeditor\editor\lang\hi.js" />
+    <Content Include="scripts\fckeditor\editor\lang\hr.js" />
+    <Content Include="scripts\fckeditor\editor\lang\hu.js" />
+    <Content Include="scripts\fckeditor\editor\lang\is.js" />
+    <Content Include="scripts\fckeditor\editor\lang\it.js" />
+    <Content Include="scripts\fckeditor\editor\lang\ja.js" />
+    <Content Include="scripts\fckeditor\editor\lang\km.js" />
+    <Content Include="scripts\fckeditor\editor\lang\ko.js" />
+    <Content Include="scripts\fckeditor\editor\lang\lt.js" />
+    <Content Include="scripts\fckeditor\editor\lang\lv.js" />
+    <Content Include="scripts\fckeditor\editor\lang\mn.js" />
+    <Content Include="scripts\fckeditor\editor\lang\ms.js" />
+    <Content Include="scripts\fckeditor\editor\lang\nb.js" />
+    <Content Include="scripts\fckeditor\editor\lang\nl.js" />
+    <Content Include="scripts\fckeditor\editor\lang\no.js" />
+    <Content Include="scripts\fckeditor\editor\lang\pl.js" />
+    <Content Include="scripts\fckeditor\editor\lang\pt-br.js" />
+    <Content Include="scripts\fckeditor\editor\lang\pt.js" />
+    <Content Include="scripts\fckeditor\editor\lang\ro.js" />
+    <Content Include="scripts\fckeditor\editor\lang\ru.js" />
+    <Content Include="scripts\fckeditor\editor\lang\sk.js" />
+    <Content Include="scripts\fckeditor\editor\lang\sl.js" />
+    <Content Include="scripts\fckeditor\editor\lang\sr-latn.js" />
+    <Content Include="scripts\fckeditor\editor\lang\sr.js" />
+    <Content Include="scripts\fckeditor\editor\lang\sv.js" />
+    <Content Include="scripts\fckeditor\editor\lang\th.js" />
+    <Content Include="scripts\fckeditor\editor\lang\tr.js" />
+    <Content Include="scripts\fckeditor\editor\lang\uk.js" />
+    <Content Include="scripts\fckeditor\editor\lang\vi.js" />
+    <Content Include="scripts\fckeditor\editor\lang\zh-cn.js" />
+    <Content Include="scripts\fckeditor\editor\lang\zh.js" />
+    <Content Include="scripts\fckeditor\editor\lang\_translationstatus.txt" />
+    <Content Include="scripts\fckeditor\editor\plugins\autogrow\fckplugin.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\bbcode\fckplugin.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\bbcode\_sample\sample.config.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\bbcode\_sample\sample.html" />
+    <Content Include="scripts\fckeditor\editor\plugins\dragresizetable\fckplugin.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\placeholder\fckplugin.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\placeholder\fck_placeholder.html" />
+    <Content Include="scripts\fckeditor\editor\plugins\placeholder\lang\de.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\placeholder\lang\en.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\placeholder\lang\es.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\placeholder\lang\fr.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\placeholder\lang\it.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\placeholder\lang\pl.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\placeholder\placeholder.gif" />
+    <Content Include="scripts\fckeditor\editor\plugins\simplecommands\fckplugin.js" />
+    <Content Include="scripts\fckeditor\editor\plugins\tablecommands\fckplugin.js" />
+    <Content Include="scripts\fckeditor\editor\skins\default\fck_dialog.css" />
+    <Content Include="scripts\fckeditor\editor\skins\default\fck_dialog_ie6.js" />
+    <Content Include="scripts\fckeditor\editor\skins\default\fck_editor.css" />
+    <Content Include="scripts\fckeditor\editor\skins\default\fck_strip.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\dialog.sides.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\dialog.sides.png" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\dialog.sides.rtl.png" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\sprites.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\sprites.png" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\toolbar.arrowright.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\toolbar.buttonarrow.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\toolbar.collapse.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\toolbar.end.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\toolbar.expand.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\toolbar.separator.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\default\images\toolbar.start.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\fck_dialog.css" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\fck_dialog_ie6.js" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\fck_editor.css" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\fck_strip.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\dialog.sides.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\dialog.sides.png" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\dialog.sides.rtl.png" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\sprites.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\sprites.png" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\toolbar.arrowright.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\toolbar.bg.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\toolbar.buttonarrow.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\toolbar.collapse.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\toolbar.end.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\toolbar.expand.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\toolbar.separator.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\office2003\images\toolbar.start.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\fck_dialog.css" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\fck_dialog_ie6.js" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\fck_editor.css" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\fck_strip.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\dialog.sides.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\dialog.sides.png" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\dialog.sides.rtl.png" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\sprites.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\sprites.png" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\toolbar.arrowright.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\toolbar.buttonarrow.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\toolbar.buttonbg.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\toolbar.collapse.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\toolbar.end.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\toolbar.expand.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\toolbar.separator.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\silver\images\toolbar.start.gif" />
+    <Content Include="scripts\fckeditor\editor\skins\_fckviewstrips.html" />
+    <Content Include="scripts\fckeditor\editor\wsc\ciframe.html" />
+    <Content Include="scripts\fckeditor\editor\wsc\tmpFrameset.html" />
+    <Content Include="scripts\fckeditor\editor\wsc\w.html" />
+    <Content Include="scripts\fckeditor\fckconfig.js" />
+    <Content Include="scripts\fckeditor\fckeditor.asp" />
+    <Content Include="scripts\fckeditor\fckeditor.js" />
+    <Content Include="scripts\fckeditor\fckpackager.xml" />
+    <Content Include="scripts\fckeditor\fckstyles.xml" />
+    <Content Include="scripts\fckeditor\fcktemplates.xml" />
+    <Content Include="scripts\fckeditor\license.txt" />
+    <Content Include="scripts\kindeditor\kindeditor-all-min.js" />
+    <Content Include="scripts\kindeditor\kindeditor-all.js" />
+    <Content Include="scripts\kindeditor\kindeditor-min.js" />
+    <Content Include="scripts\kindeditor\kindeditor.js" />
+    <Content Include="scripts\kindeditor\lang\ar.js" />
+    <Content Include="scripts\kindeditor\lang\en.js" />
+    <Content Include="scripts\kindeditor\lang\ko.js" />
+    <Content Include="scripts\kindeditor\lang\zh_CN.js" />
+    <Content Include="scripts\kindeditor\lang\zh_TW.js" />
+    <Content Include="scripts\kindeditor\license.txt" />
+    <Content Include="scripts\kindeditor\plugins\anchor\anchor.js" />
+    <Content Include="scripts\kindeditor\plugins\autoheight\autoheight.js" />
+    <Content Include="scripts\kindeditor\plugins\baidumap\baidumap.js" />
+    <Content Include="scripts\kindeditor\plugins\baidumap\index.html" />
+    <Content Include="scripts\kindeditor\plugins\baidumap\map.html" />
+    <Content Include="scripts\kindeditor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="scripts\kindeditor\plugins\code\code.js" />
+    <Content Include="scripts\kindeditor\plugins\code\prettify.css" />
+    <Content Include="scripts\kindeditor\plugins\code\prettify.js" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\emoticons.js" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\0.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\1.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\10.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\100.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\101.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\102.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\103.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\104.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\105.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\106.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\107.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\108.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\109.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\11.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\110.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\111.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\112.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\113.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\114.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\115.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\116.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\117.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\118.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\119.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\12.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\120.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\121.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\122.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\123.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\124.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\125.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\126.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\127.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\128.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\129.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\13.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\130.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\131.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\132.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\133.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\134.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\14.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\15.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\16.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\17.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\18.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\19.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\2.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\20.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\21.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\22.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\23.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\24.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\25.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\26.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\27.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\28.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\29.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\3.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\30.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\31.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\32.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\33.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\34.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\35.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\36.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\37.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\38.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\39.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\4.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\40.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\41.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\42.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\43.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\44.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\45.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\46.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\47.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\48.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\49.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\5.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\50.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\51.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\52.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\53.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\54.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\55.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\56.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\57.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\58.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\59.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\6.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\60.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\61.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\62.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\63.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\64.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\65.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\66.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\67.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\68.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\69.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\7.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\70.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\71.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\72.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\73.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\74.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\75.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\76.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\77.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\78.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\79.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\8.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\80.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\81.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\82.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\83.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\84.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\85.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\86.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\87.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\88.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\89.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\9.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\90.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\91.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\92.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\93.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\94.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\95.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\96.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\97.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\98.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\99.gif" />
+    <Content Include="scripts\kindeditor\plugins\emoticons\images\static.gif" />
+    <Content Include="scripts\kindeditor\plugins\filemanager\filemanager.js" />
+    <Content Include="scripts\kindeditor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="scripts\kindeditor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="scripts\kindeditor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="scripts\kindeditor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="scripts\kindeditor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="scripts\kindeditor\plugins\flash\flash.js" />
+    <Content Include="scripts\kindeditor\plugins\image\image.js" />
+    <Content Include="scripts\kindeditor\plugins\image\images\align_left.gif" />
+    <Content Include="scripts\kindeditor\plugins\image\images\align_right.gif" />
+    <Content Include="scripts\kindeditor\plugins\image\images\align_top.gif" />
+    <Content Include="scripts\kindeditor\plugins\image\images\refresh.png" />
+    <Content Include="scripts\kindeditor\plugins\insertfile\insertfile.js" />
+    <Content Include="scripts\kindeditor\plugins\lineheight\lineheight.js" />
+    <Content Include="scripts\kindeditor\plugins\link\link.js" />
+    <Content Include="scripts\kindeditor\plugins\map\map.html" />
+    <Content Include="scripts\kindeditor\plugins\map\map.js" />
+    <Content Include="scripts\kindeditor\plugins\media\media.js" />
+    <Content Include="scripts\kindeditor\plugins\multiimage\images\image.png" />
+    <Content Include="scripts\kindeditor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="scripts\kindeditor\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="scripts\kindeditor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="scripts\kindeditor\plugins\multiimage\multiimage.js" />
+    <Content Include="scripts\kindeditor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="scripts\kindeditor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="scripts\kindeditor\plugins\preview\preview.js" />
+    <Content Include="scripts\kindeditor\plugins\quickformat\quickformat.js" />
+    <Content Include="scripts\kindeditor\plugins\table\table.js" />
+    <Content Include="scripts\kindeditor\plugins\template\html\1.html" />
+    <Content Include="scripts\kindeditor\plugins\template\html\2.html" />
+    <Content Include="scripts\kindeditor\plugins\template\html\3.html" />
+    <Content Include="scripts\kindeditor\plugins\template\template.js" />
+    <Content Include="scripts\kindeditor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="scripts\kindeditor\themes\common\anchor.gif" />
+    <Content Include="scripts\kindeditor\themes\common\blank.gif" />
+    <Content Include="scripts\kindeditor\themes\common\flash.gif" />
+    <Content Include="scripts\kindeditor\themes\common\loading.gif" />
+    <Content Include="scripts\kindeditor\themes\common\media.gif" />
+    <Content Include="scripts\kindeditor\themes\common\rm.gif" />
+    <Content Include="scripts\kindeditor\themes\default\background.png" />
+    <Content Include="scripts\kindeditor\themes\default\default.css" />
+    <Content Include="scripts\kindeditor\themes\default\default.png" />
+    <Content Include="scripts\kindeditor\themes\qq\editor.gif" />
+    <Content Include="scripts\kindeditor\themes\qq\qq.css" />
+    <Content Include="scripts\kindeditor\themes\simple\simple.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="excel\dowmload\导入模板.xls" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
+    <None Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.php" />
+    <None Include="scripts\fckeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.pl" />
+    <None Include="scripts\fckeditor\editor\images\smiley\msn\Thumbs.db" />
+    <None Include="scripts\fckeditor\editor\images\Thumbs.db" />
+    <None Include="scripts\fckeditor\fckeditor.afp" />
+    <None Include="scripts\fckeditor\fckeditor.cfc" />
+    <None Include="scripts\fckeditor\fckeditor.cfm" />
+    <None Include="scripts\fckeditor\fckeditor.lasso" />
+    <None Include="scripts\fckeditor\fckeditor.php" />
+    <None Include="scripts\fckeditor\fckeditor.pl" />
+    <None Include="scripts\fckeditor\fckeditor.py" />
+    <None Include="scripts\fckeditor\fckeditor_php4.php" />
+    <None Include="scripts\fckeditor\fckeditor_php5.php" />
+    <None Include="scripts\fckeditor\fckutils.cfm" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\jquery.dialog.css" />
+    <Content Include="css\modaldiv3.css" />
+    <Content Include="HEM_HPP\STAFF_REAL_LIST.aspx" />
+    <Content Include="HEM_HRS\STAFF_LIST.aspx" />
+    <Content Include="HEM_HRS\STAFF_NURSE_PROJECT.aspx" />
+    <Content Include="HEM_HPP\USER_STAFF_LIST.aspx" />
+    <Content Include="HEM_HRS\STAFF_SEND_BASIC.aspx" />
+    <Content Include="HEM_HRS\STAFF_SEND_EDUCATION.aspx" />
+    <Content Include="HEM_HRS\STAFF_SEND_WORK.aspx" />
+    <Content Include="HEM_HRS\STAFF_SEND_PROJECT.aspx" />
+    <Content Include="HEM_HRS\STAFF_SEND_ESSAY.aspx" />
+    <Content Include="MsgTest.aspx" />
+    <Content Include="scripts\public\Error.aspx" />
+    <Content Include="scripts\public\Manage_Error.aspx" />
+    <Content Include="HEM_HRS\STAFF_FILEUPLOAD.aspx" />
+    <Content Include="HEM_HRS\STAFF_NURSE_BASIC.aspx" />
+    <Content Include="HEM_HRS\STAFF_NURSE_EDUCATION.aspx" />
+    <Content Include="HEM_HRS\STAFF_NURSE_FILEUPLOAD.aspx" />
+    <Content Include="HEM_HRS\STAFF_NURSE_WORK.aspx" />
+    <Content Include="scripts\public\User_Error.aspx" />
+    <Content Include="HEM_SYS\MANAGE_USER_EDIT.aspx" />
+    <Content Include="HEM_SYS\USER_LIST.aspx" />
+    <Content Include="HEM_SYS\MANAGE_USER_LIST.aspx" />
+    <Content Include="HEM_SYS\MANAGE_USER_ADD.aspx" />
+    <Content Include="HEM_SYS\MANAGE_USER_PWD_EDIT.aspx" />
+    <Content Include="scripts\checkData.js" />
+    <Content Include="scripts\html5shiv.min.js" />
+    <Content Include="scripts\jquery-1.8.2.min.js" />
+    <Content Include="scripts\jquery.dialog.js" />
+    <Content Include="scripts\jquery.js" />
+    <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\json2.js" />
+    <Content Include="scripts\kindeditor\asp.net\file_manager_json.ashx" />
+    <Content Include="scripts\kindeditor\asp.net\upload_json.ashx" />
+    <Content Include="scripts\respond.min.js" />
+    <Content Include="scripts\personnurse.js" />
+    <Content Include="scripts\personsend.js" />
+    <Content Include="FORGET_PASSWORD1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="DLLImport\" />
+    <Folder Include="doc\attached\" />
+    <Folder Include="excel\attached\" />
+    <Folder Include="scripts\attached\file\" />
+    <Folder Include="scripts\attached\image\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>24078</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:24078/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

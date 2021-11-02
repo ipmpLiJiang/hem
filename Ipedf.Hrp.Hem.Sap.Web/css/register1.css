@@ -1,0 +1,157 @@
+@media screen and (max-width: 4000px) {
+	.tishi2 {
+		margin-top: 90px;
+		color: #ff0000;
+		font-size: 15px;
+	}
+
+	.tishi1 {
+		margin-top: 50px;
+		color: #ff0000;
+		font-size: 15px;
+	}
+
+	.btndiv {
+		width: 100;
+		height: 5%;
+		left: 37%;
+		border: 1px;
+		position: absolute;
+		bottom: 14%;
+	}
+
+	.white_content {
+		min-height: 64%;
+	}
+}
+
+@media (max-width: 1920px) {
+	.tishi2 {
+		margin-top: 90px;
+		color: #ff0000;
+		font-size: 15px;
+	}
+
+	.tishi1 {
+		margin-top: 50px;
+		color: #ff0000;
+		font-size: 15px;
+	}
+
+	.btndiv {
+		width: 100;
+		height: 5%;
+		left: 37%;
+		border: 1px;
+		position: absolute;
+		bottom: 14%;
+	}
+
+	.white_content {
+		min-height: 64%;
+	}
+}
+
+@media (max-width: 1600px) {
+	.tishi2 {
+		margin-top: 40px;
+		color: #ff0000;
+		font-size: 15px;
+		line-height: 15px;
+	}
+
+	.tishi1 {
+		margin-top: 40px;
+		color: #ff0000;
+		font-size: 15px;
+		line-height: 15px;
+	}
+
+	.btndiv {
+		width: 100;
+		height: 5%;
+		left: 37%;
+		border: 1px;
+		position: absolute;
+		bottom: 10%;
+	}
+
+	.white_content {
+		min-height: 70%;
+	}
+}
+
+
+
+/* 1440 x 600 */
+@media (max-width: 1440px) {
+	.tishi2 {
+		margin-top: 20px;
+		color: #ff0000;
+		font-size: 12px;
+		line-height: 12px;
+	}
+
+	.tishi1 {
+		margin-top: 0px;
+		color: #ff0000;
+		font-size: 12px;
+		line-height: 12px;
+	}
+
+	.btndiv {
+		width: 100;
+		height: 5%;
+		left: 37%;
+		border: 1px;
+		position: absolute;
+		bottom: 10%;
+	}
+
+	.white_content {
+		min-height: 80%;
+		min-width: 45%;
+	}
+
+	.white_content .form-group {
+		margin-top: 10px;
+		padding-top: 26px;
+	}
+}
+
+
+/* 1024 x 600 */
+@media (max-width: 1024px) {
+	.tishi2 {
+		margin-top: 20px;
+		color: #ff0000;
+		font-size: 12px;
+		line-height: 12px;
+	}
+
+	.tishi1 {
+		margin-top: 0px;
+		color: #ff0000;
+		font-size: 12px;
+		line-height: 12px;
+	}
+
+	.btndiv {
+		width: 100;
+		height: 5%;
+		left: 37%;
+		border: 1px;
+		position: absolute;
+		bottom: 10%;
+	}
+
+	.white_content {
+		min-height: 80%;
+		min-width: 60%;
+	}
+
+	.white_content .form-group {
+		margin-top: 10px;
+		padding-top: 26px;
+	}
+}

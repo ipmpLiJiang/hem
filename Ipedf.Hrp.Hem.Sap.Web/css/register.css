@@ -1,0 +1,27 @@
+
+.header 
+{
+    min-width:1166px;
+}
+#light .form-group >div 
+{
+    text-align:left;	
+}
+.white_content 
+{
+	min-height:64%;
+}
+#mainbg 
+{
+    min-width: 1124px;	
+}
+#leftBg 
+{
+	float:left;
+	width:30%;
+}
+#rightBg
+{
+	float:left;
+	width:65%;
+}

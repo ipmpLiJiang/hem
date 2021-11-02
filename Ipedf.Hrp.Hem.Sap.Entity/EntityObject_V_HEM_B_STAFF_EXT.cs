@@ -1,0 +1,359 @@
+using System;
+using System.Data;
+using System.Collections;
+using Ipedf.Core;
+using ConstLibrary = Ipedf.Common;
+using System.Runtime.Serialization;
+namespace Ipedf.Hrp.Hem.Sap.Entity
+{
+	[Serializable]
+	[DataObject("V_HEM_B_STAFF_EXT")]
+	public partial class CauseObject_V_HEM_B_STAFF_EXT:CauseBase
+	{
+		#region Attribute Block
+		
+			//平台自动生成代码
+		System.Decimal _REAL_ZHRGRSG = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  REAL_ZHRGRSG{get{ return  _REAL_ZHRGRSG;}set{ _REAL_ZHRGRSG = value;}}
+		System.String _FIRSTCHOICE = string.Empty;
+		
+		public System.String  FIRSTCHOICE{get{ return  _FIRSTCHOICE;}set{ _FIRSTCHOICE = value;}}
+		System.String _ZHRTC = string.Empty;
+		
+		public System.String  ZHRTC{get{ return  _ZHRTC;}set{ _ZHRTC = value;}}
+		System.String _ZHRYRXX = string.Empty;
+		
+		public System.String  ZHRYRXX{get{ return  _ZHRYRXX;}set{ _ZHRYRXX = value;}}
+		System.String _USRID_MAIL = string.Empty;
+		
+		public System.String  USRID_MAIL{get{ return  _USRID_MAIL;}set{ _USRID_MAIL = value;}}
+		System.Decimal _WRITTEN_ENGLISH = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  WRITTEN_ENGLISH{get{ return  _WRITTEN_ENGLISH;}set{ _WRITTEN_ENGLISH = value;}}
+		DateSpan _GBDAT = null;
+		
+		public DateSpan  GBDAT{get{ return  _GBDAT;}set{ _GBDAT = value;}}
+		System.String _LOCAT_HJ = string.Empty;
+		
+		public System.String  LOCAT_HJ{get{ return  _LOCAT_HJ;}set{ _LOCAT_HJ = value;}}
+		System.String _LOCAT_JT = string.Empty;
+		
+		public System.String  LOCAT_JT{get{ return  _LOCAT_JT;}set{ _LOCAT_JT = value;}}
+		System.String _USER_ID = string.Empty;
+		
+		public System.String  USER_ID{get{ return  _USER_ID;}set{ _USER_ID = value;}}
+		System.String _TELNR = string.Empty;
+		
+		public System.String  TELNR{get{ return  _TELNR;}set{ _TELNR = value;}}
+		System.String _ZHRGRSG = string.Empty;
+		
+		public System.String  ZHRGRSG{get{ return  _ZHRGRSG;}set{ _ZHRGRSG = value;}}
+		System.String _ID = string.Empty;
+		
+		public System.String  ID{get{ return  _ID;}set{ _ID = value;}}
+		System.String _FAMST = string.Empty;
+		
+		public System.String  FAMST{get{ return  _FAMST;}set{ _FAMST = value;}}
+		System.String _ZHRSXXX = string.Empty;
+		
+		public System.String  ZHRSXXX{get{ return  _ZHRSXXX;}set{ _ZHRSXXX = value;}}
+		System.String _ZHRHJJL = string.Empty;
+		
+		public System.String  ZHRHJJL{get{ return  _ZHRHJJL;}set{ _ZHRHJJL = value;}}
+		System.String _ZHRWYSP = string.Empty;
+		
+		public System.String  ZHRWYSP{get{ return  _ZHRWYSP;}set{ _ZHRWYSP = value;}}
+		System.String _ZHRSLJZ = string.Empty;
+		
+		public System.String  ZHRSLJZ{get{ return  _ZHRSLJZ;}set{ _ZHRSLJZ = value;}}
+		System.String _USRID_TEL = string.Empty;
+		
+		public System.String  USRID_TEL{get{ return  _USRID_TEL;}set{ _USRID_TEL = value;}}
+		System.Decimal _IS_NURSE = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  IS_NURSE{get{ return  _IS_NURSE;}set{ _IS_NURSE = value;}}
+		System.String _ZHRJSJSP = string.Empty;
+		
+		public System.String  ZHRJSJSP{get{ return  _ZHRJSJSP;}set{ _ZHRJSJSP = value;}}
+		System.String _ZHRWYFS = string.Empty;
+		
+		public System.String  ZHRWYFS{get{ return  _ZHRWYFS;}set{ _ZHRWYFS = value;}}
+		System.Decimal _WRITTEN_THEORY = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  WRITTEN_THEORY{get{ return  _WRITTEN_THEORY;}set{ _WRITTEN_THEORY = value;}}
+		System.String _ZHRGZNX = string.Empty;
+		
+		public System.String  ZHRGZNX{get{ return  _ZHRGZNX;}set{ _ZHRGZNX = value;}}
+		DateSpan _FGBDT = null;
+		
+		public DateSpan  FGBDT{get{ return  _FGBDT;}set{ _FGBDT = value;}}
+		System.String _PRACTICE_TYPE_ID = string.Empty;
+		
+		public System.String  PRACTICE_TYPE_ID{get{ return  _PRACTICE_TYPE_ID;}set{ _PRACTICE_TYPE_ID = value;}}
+		System.Decimal _IS_ACTION = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  IS_ACTION{get{ return  _IS_ACTION;}set{ _IS_ACTION = value;}}
+		System.String _FANAM = string.Empty;
+		
+		public System.String  FANAM{get{ return  _FANAM;}set{ _FANAM = value;}}
+		System.String _ICNUM = string.Empty;
+		
+		public System.String  ICNUM{get{ return  _ICNUM;}set{ _ICNUM = value;}}
+		System.String _GESCH = string.Empty;
+		
+		public System.String  GESCH{get{ return  _GESCH;}set{ _GESCH = value;}}
+		System.String _NACHN = string.Empty;
+		
+		public System.String  NACHN{get{ return  _NACHN;}set{ _NACHN = value;}}
+		System.Decimal _ANZKD = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  ANZKD{get{ return  _ANZKD;}set{ _ANZKD = value;}}
+		System.String _ZHRBZ = string.Empty;
+		
+		public System.String  ZHRBZ{get{ return  _ZHRBZ;}set{ _ZHRBZ = value;}}
+		System.String _ZHRZWJS = string.Empty;
+		
+		public System.String  ZHRZWJS{get{ return  _ZHRZWJS;}set{ _ZHRZWJS = value;}}
+		System.String _FASEX = string.Empty;
+		
+		public System.String  FASEX{get{ return  _FASEX;}set{ _FASEX = value;}}
+		System.String _APPLY_ID = string.Empty;
+		
+		public System.String  APPLY_ID{get{ return  _APPLY_ID;}set{ _APPLY_ID = value;}}
+		System.String _STAFF_TYPE_ID = string.Empty;
+		
+		public System.String  STAFF_TYPE_ID{get{ return  _STAFF_TYPE_ID;}set{ _STAFF_TYPE_ID = value;}}
+		System.String _ZHRJKZK = string.Empty;
+		
+		public System.String  ZHRJKZK{get{ return  _ZHRJKZK;}set{ _ZHRJKZK = value;}}
+		System.String _SECONDCHOICE = string.Empty;
+		
+		public System.String  SECONDCHOICE{get{ return  _SECONDCHOICE;}set{ _SECONDCHOICE = value;}}
+		System.String _PCODE = string.Empty;
+		
+		public System.String  PCODE{get{ return  _PCODE;}set{ _PCODE = value;}}
+		System.String _ZHRGRTZ = string.Empty;
+		
+		public System.String  ZHRGRTZ{get{ return  _ZHRGRTZ;}set{ _ZHRGRTZ = value;}}
+		System.String _LOCAT_XJ = string.Empty;
+		
+		public System.String  LOCAT_XJ{get{ return  _LOCAT_XJ;}set{ _LOCAT_XJ = value;}}
+		System.String _TYPE_ID = string.Empty;
+		
+		public System.String  TYPE_ID{get{ return  _TYPE_ID;}set{ _TYPE_ID = value;}}
+		System.String _ZHRTZGG = string.Empty;
+		
+		public System.String  ZHRTZGG{get{ return  _ZHRTZGG;}set{ _ZHRTZGG = value;}}
+		System.String _ZHRFZDJ = string.Empty;
+		
+		public System.String  ZHRFZDJ{get{ return  _ZHRFZDJ;}set{ _ZHRFZDJ = value;}}
+		System.String _ZHRJG = string.Empty;
+		
+		public System.String  ZHRJG{get{ return  _ZHRJG;}set{ _ZHRJG = value;}}
+		System.String _RACKY = string.Empty;
+		
+		public System.String  RACKY{get{ return  _RACKY;}set{ _RACKY = value;}}
+		System.Decimal _REAL_ZHRSLJZ = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  REAL_ZHRSLJZ{get{ return  _REAL_ZHRSLJZ;}set{ _REAL_ZHRSLJZ = value;}}
+		System.Decimal _REAL_ZHRGRTZ = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  REAL_ZHRGRTZ{get{ return  _REAL_ZHRGRTZ;}set{ _REAL_ZHRGRTZ = value;}}
+		System.String _FILE_PATH = string.Empty;
+		
+		public System.String  FILE_PATH{get{ return  _FILE_PATH;}set{ _FILE_PATH = value;}}
+		System.Decimal _IS_CERTIFICATE = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  IS_CERTIFICATE{get{ return  _IS_CERTIFICATE;}set{ _IS_CERTIFICATE = value;}}
+		System.Decimal _OPERATOR_ONE = ConstLibrary.Template.UndefineDecimal;
+		
+		public System.Decimal  OPERATOR_ONE{get{ return  _OPERATOR_ONE;}set{ _OPERATOR_ONE = value;}}
+
+		#endregion 
+	}
+	[Serializable]
+	public partial class DisplayObject_V_HEM_B_STAFF_EXT:EntityObject_V_HEM_B_STAFF_EXT
+	{
+		#region Attribute Block
+		
+			//平台自动生成代码
+
+		#endregion 
+	}
+	[Serializable]
+	public partial class EntityObject_V_HEM_B_STAFF_EXT:EntityBase
+	{
+		#region Attribute Block
+		
+			//平台自动生成代码
+		System.Decimal  _REAL_ZHRGRSG;
+		
+		public System.Decimal  REAL_ZHRGRSG{get{ return  _REAL_ZHRGRSG;}set{ _REAL_ZHRGRSG = value;}}
+		System.String  _FIRSTCHOICE;
+		
+		public System.String  FIRSTCHOICE{get{ return  _FIRSTCHOICE;}set{ _FIRSTCHOICE = value;}}
+		System.String  _ZHRTC;
+		
+		public System.String  ZHRTC{get{ return  _ZHRTC;}set{ _ZHRTC = value;}}
+		System.String  _ZHRYRXX;
+		
+		public System.String  ZHRYRXX{get{ return  _ZHRYRXX;}set{ _ZHRYRXX = value;}}
+		System.String  _USRID_MAIL;
+		
+		public System.String  USRID_MAIL{get{ return  _USRID_MAIL;}set{ _USRID_MAIL = value;}}
+		System.Decimal  _WRITTEN_ENGLISH;
+		
+		public System.Decimal  WRITTEN_ENGLISH{get{ return  _WRITTEN_ENGLISH;}set{ _WRITTEN_ENGLISH = value;}}
+		System.DateTime  _GBDAT;
+		
+		public System.DateTime  GBDAT{get{ return  _GBDAT;}set{ _GBDAT = value;}}
+		System.String  _LOCAT_HJ;
+		
+		public System.String  LOCAT_HJ{get{ return  _LOCAT_HJ;}set{ _LOCAT_HJ = value;}}
+		System.String  _LOCAT_JT;
+		
+		public System.String  LOCAT_JT{get{ return  _LOCAT_JT;}set{ _LOCAT_JT = value;}}
+		System.String  _USER_ID;
+		
+		public System.String  USER_ID{get{ return  _USER_ID;}set{ _USER_ID = value;}}
+		System.String  _TELNR;
+		
+		public System.String  TELNR{get{ return  _TELNR;}set{ _TELNR = value;}}
+		System.String  _ZHRGRSG;
+		
+		public System.String  ZHRGRSG{get{ return  _ZHRGRSG;}set{ _ZHRGRSG = value;}}
+		System.String  _ID;
+		
+		public System.String  ID{get{ return  _ID;}set{ _ID = value;}}
+		System.String  _FAMST;
+		
+		public System.String  FAMST{get{ return  _FAMST;}set{ _FAMST = value;}}
+		System.String  _ZHRSXXX;
+		
+		public System.String  ZHRSXXX{get{ return  _ZHRSXXX;}set{ _ZHRSXXX = value;}}
+        System.String _YJSSXXX;
+
+        public System.String YJSSXXX { get { return _YJSSXXX; } set { _YJSSXXX = value; } }
+		System.String  _ZHRHJJL;
+		
+		public System.String  ZHRHJJL{get{ return  _ZHRHJJL;}set{ _ZHRHJJL = value;}}
+		System.String  _ZHRWYSP;
+		
+		public System.String  ZHRWYSP{get{ return  _ZHRWYSP;}set{ _ZHRWYSP = value;}}
+		System.String  _ZHRSLJZ;
+		
+		public System.String  ZHRSLJZ{get{ return  _ZHRSLJZ;}set{ _ZHRSLJZ = value;}}
+		System.String  _USRID_TEL;
+		
+		public System.String  USRID_TEL{get{ return  _USRID_TEL;}set{ _USRID_TEL = value;}}
+		System.Decimal  _IS_NURSE;
+		
+		public System.Decimal  IS_NURSE{get{ return  _IS_NURSE;}set{ _IS_NURSE = value;}}
+		System.String  _ZHRJSJSP;
+		
+		public System.String  ZHRJSJSP{get{ return  _ZHRJSJSP;}set{ _ZHRJSJSP = value;}}
+		System.String  _ZHRWYFS;
+		
+		public System.String  ZHRWYFS{get{ return  _ZHRWYFS;}set{ _ZHRWYFS = value;}}
+		System.Decimal  _WRITTEN_THEORY;
+		
+		public System.Decimal  WRITTEN_THEORY{get{ return  _WRITTEN_THEORY;}set{ _WRITTEN_THEORY = value;}}
+		System.String  _ZHRGZNX;
+		
+		public System.String  ZHRGZNX{get{ return  _ZHRGZNX;}set{ _ZHRGZNX = value;}}
+		System.DateTime  _FGBDT;
+		
+		public System.DateTime  FGBDT{get{ return  _FGBDT;}set{ _FGBDT = value;}}
+		System.String  _PRACTICE_TYPE_ID;
+		
+		public System.String  PRACTICE_TYPE_ID{get{ return  _PRACTICE_TYPE_ID;}set{ _PRACTICE_TYPE_ID = value;}}
+		System.Decimal  _IS_ACTION;
+		
+		public System.Decimal  IS_ACTION{get{ return  _IS_ACTION;}set{ _IS_ACTION = value;}}
+		System.String  _FANAM;
+		
+		public System.String  FANAM{get{ return  _FANAM;}set{ _FANAM = value;}}
+		System.String  _ICNUM;
+		
+		public System.String  ICNUM{get{ return  _ICNUM;}set{ _ICNUM = value;}}
+		System.String  _GESCH;
+		
+		public System.String  GESCH{get{ return  _GESCH;}set{ _GESCH = value;}}
+		System.String  _NACHN;
+		
+		public System.String  NACHN{get{ return  _NACHN;}set{ _NACHN = value;}}
+		System.Decimal  _ANZKD;
+		
+		public System.Decimal  ANZKD{get{ return  _ANZKD;}set{ _ANZKD = value;}}
+		System.String  _ZHRBZ;
+		
+		public System.String  ZHRBZ{get{ return  _ZHRBZ;}set{ _ZHRBZ = value;}}
+		System.String  _ZHRZWJS;
+		
+		public System.String  ZHRZWJS{get{ return  _ZHRZWJS;}set{ _ZHRZWJS = value;}}
+		System.String  _FASEX;
+		
+		public System.String  FASEX{get{ return  _FASEX;}set{ _FASEX = value;}}
+		System.String  _APPLY_ID;
+		
+		public System.String  APPLY_ID{get{ return  _APPLY_ID;}set{ _APPLY_ID = value;}}
+		System.String  _STAFF_TYPE_ID;
+		
+		public System.String  STAFF_TYPE_ID{get{ return  _STAFF_TYPE_ID;}set{ _STAFF_TYPE_ID = value;}}
+		System.String  _ZHRJKZK;
+		
+		public System.String  ZHRJKZK{get{ return  _ZHRJKZK;}set{ _ZHRJKZK = value;}}
+		System.String  _SECONDCHOICE;
+		
+		public System.String  SECONDCHOICE{get{ return  _SECONDCHOICE;}set{ _SECONDCHOICE = value;}}
+		System.String  _PCODE;
+		
+		public System.String  PCODE{get{ return  _PCODE;}set{ _PCODE = value;}}
+		System.String  _ZHRGRTZ;
+		
+		public System.String  ZHRGRTZ{get{ return  _ZHRGRTZ;}set{ _ZHRGRTZ = value;}}
+		System.String  _LOCAT_XJ;
+		
+		public System.String  LOCAT_XJ{get{ return  _LOCAT_XJ;}set{ _LOCAT_XJ = value;}}
+		System.String  _TYPE_ID;
+		
+		public System.String  TYPE_ID{get{ return  _TYPE_ID;}set{ _TYPE_ID = value;}}
+		System.String  _ZHRTZGG;
+		
+		public System.String  ZHRTZGG{get{ return  _ZHRTZGG;}set{ _ZHRTZGG = value;}}
+		System.String  _ZHRFZDJ;
+		
+		public System.String  ZHRFZDJ{get{ return  _ZHRFZDJ;}set{ _ZHRFZDJ = value;}}
+		System.String  _ZHRJG;
+		
+		public System.String  ZHRJG{get{ return  _ZHRJG;}set{ _ZHRJG = value;}}
+		System.String  _RACKY;
+		
+		public System.String  RACKY{get{ return  _RACKY;}set{ _RACKY = value;}}
+		System.Decimal  _REAL_ZHRSLJZ;
+		
+		public System.Decimal  REAL_ZHRSLJZ{get{ return  _REAL_ZHRSLJZ;}set{ _REAL_ZHRSLJZ = value;}}
+		System.Decimal  _REAL_ZHRGRTZ;
+		
+		public System.Decimal  REAL_ZHRGRTZ{get{ return  _REAL_ZHRGRTZ;}set{ _REAL_ZHRGRTZ = value;}}
+		System.String  _FILE_PATH;
+		
+		public System.String  FILE_PATH{get{ return  _FILE_PATH;}set{ _FILE_PATH = value;}}
+		System.Decimal  _IS_CERTIFICATE;
+		
+		public System.Decimal  IS_CERTIFICATE{get{ return  _IS_CERTIFICATE;}set{ _IS_CERTIFICATE = value;}}
+		System.Decimal  _OPERATOR_ONE;
+		
+		public System.Decimal  OPERATOR_ONE{get{ return  _OPERATOR_ONE;}set{ _OPERATOR_ONE = value;}}
+
+        System.String _IS_STANDARD;
+
+        public System.String IS_STANDARD { get { return _IS_STANDARD; } set { _IS_STANDARD = value; } }
+
+        System.String _IS_SZHY;
+
+        public System.String IS_SZHY { get { return _IS_SZHY; } set { _IS_SZHY = value; } }
+        #endregion
+    }	
+}

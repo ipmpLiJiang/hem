@@ -1,0 +1,727 @@
+--招聘广告(HEM_B_RECRUIT_POSTER)
+CREATE TABLE HEM_B_RECRUIT_POSTER
+(
+  "ID" CHAR(36) NOT NULL ENABLE, 
+  "PUBLISHER" VARCHAR2(50), --发布人
+  "DATA_SOURCE" VARCHAR2(50), --资料来源
+  "PUBLISH_DATE" DATE, --发布日期
+  "END_DATE" DATE, --结束日期
+  "CREATE_DATE" DATE,-- 创建日期
+  "TITLE" VARCHAR2(150),--标题
+  "RECRUIT_POSITION" VARCHAR2(150),--招聘职位
+  --"POSITION_NAME" VARCHAR2(50),--职位
+  --"AMOUNT" NUMBER(3), --招聘人数
+  --"ASK_HEALTH" VARCHAR2(50),--身体要求
+  --"ASK_DUCATION" VARCHAR2(50),--学历要求
+  --"ASK_AGE" VARCHAR2(50),--年龄要求
+  --"ASK_MAJOR" VARCHAR2(50),-- 专业要求
+  --"SALARY" VARCHAR2(200), --待遇
+  --"APPLE_ADDRESS" TIMESTAMP (6),-- 报名地点
+  --"IS_RESUME" NUMBER(1),--报名需提交材料个人简历
+  --"IS_DIPLOMA" NUMBER(1), --报名需提交材料毕业证
+  --"IS_ID_NUMBER" NUMBER(1), --报名需提交材料身份证复印件
+  --"OTHER" VARCHAR2(50), --其他
+  "CONTENT" CLOB,--内容
+  "STATUS" NUMBER(3),--状态
+  "USER_ID" CHAR(36), --用户登录
+  "REMARK" varchar2(200) --备注
+);
+
+ALTER TABLE HEM_B_RECRUIT_POSTER ADD CONSTRAINT PK_HEM_B_RECRUIT_POSTER PRIMARY KEY(ID);
+
+COMMENT ON TABLE "HEM_B_RECRUIT_POSTER" IS '招聘广告';
+COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."PUBLISHER" IS '发布人';
+COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."DATA_SOURCE" IS '资料来源';
+COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."PUBLISH_DATE" IS '发布日期';
+COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."END_DATE" IS '结束日期';
+COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."CREATE_DATE" IS '创建日期';
+COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."TITLE" IS '标题';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."POSITION_NAME" IS '职位';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."AMOUNT" IS '招聘人数';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."ASK_HEALTH" IS '身体要求';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."ASK_DUCATION" IS '学历要求';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."ASK_AGE" IS '年龄要求';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."ASK_MAJOR" IS '专业要求';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."SALARY" IS '待遇';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."APPLE_ADDRESS" IS '报名地点';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."IS_RESUME" IS '报名需提交材料个人简历';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."IS_DIPLOMA" IS '报名需提交材料毕业证';
+--COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."IS_ID_NUMBER" IS '报名需提交材料身份证复印件';
+COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."OTHER" IS '其他';
+COMMENT ON COLUMN "HEM_B_RECRUIT_POSTER"."STATUS" IS '状态';
+
+
+create table hem_b_staff_type
+(
+       ID char(36),
+       USER_ID char(36),
+       IS_NURSE number(3),
+       IS_ACTION number(3),
+       STAFF_ID char(36),
+       TYPE_ID VARCHAR2(10) 
+);
+ALTER TABLE hem_b_staff_type ADD CONSTRAINT PK_hem_b_staff_type PRIMARY KEY(ID);
+
+CREATE TABLE HEM_B_STAFF_APPLY_N
+(
+  "ID" CHAR(36) NOT NULL ENABLE,
+  "POSTER_ID" CHAR(36),--招聘广告
+  "USER_ID" CHAR(36),
+  "STATUS" number(3)
+);
+
+ALTER TABLE HEM_B_STAFF_APPLY_N ADD CONSTRAINT PK_HEM_B_STAFF_APPLY_N PRIMARY KEY(ID);
+
+--公告通知(HEM_B_PUBLIC_POSTER)
+/*CREATE TABLE HEM_B_PUBLIC_POSTER
+(
+  "ID" CHAR(36) NOT NULL ENABLE, 
+  "PUBLISHER" VARCHAR2(50), --发布者
+  "DATA_SOURCE" VARCHAR2(50), --资料来源
+  "POSTER_DATE" DATE, --公告时间
+  "END_DATE" DATE, --结束日期
+  "CREATE_DATE" DATE, --创建日期
+  "TITLE" VARCHAR2(50),--公告标题
+  "CONTENT" CLOB,--公告内容
+  "STATUS" NUMBER(3),--状态
+  "USER_ID" CHAR(36), --用户登录
+  "REMARK" varchar2(200) --备注
+);
+
+ALTER TABLE HEM_B_PUBLIC_POSTER ADD CONSTRAINT PK_HEM_B_PUBLIC_POSTER PRIMARY KEY(ID);
+COMMENT ON TABLE "HEM_B_PUBLIC_POSTER" IS '公告通知';
+COMMENT ON COLUMN "HEM_B_PUBLIC_POSTER"."PUBLISHER" IS '发布人';
+COMMENT ON COLUMN "HEM_B_PUBLIC_POSTER"."DATA_SOURCE" IS '资料来源';
+COMMENT ON COLUMN "HEM_B_PUBLIC_POSTER"."POSTER_DATE" IS '公告时间';
+COMMENT ON COLUMN "HEM_B_PUBLIC_POSTER"."END_DATE" IS '结束日期';
+COMMENT ON COLUMN "HEM_B_PUBLIC_POSTER"."CREATE_DATE" IS '创建日期';
+COMMENT ON COLUMN "HEM_B_PUBLIC_POSTER"."TITLE" IS '公告标题';
+COMMENT ON COLUMN "HEM_B_PUBLIC_POSTER"."CONTENT" IS '公告内容';
+COMMENT ON COLUMN "HEM_B_PUBLIC_POSTER"."STATUS" IS '状态';
+*/
+--基础信息(HEM_B_STAFF) 
+CREATE TABLE HEM_B_STAFF
+(
+  "ID" CHAR(36) NOT NULL ENABLE,
+  "NACHN" VARCHAR2(80),--姓名
+  "GESCH" VARCHAR2(1),--性别
+  "GBDAT" DATE,--出生日期
+  "ICNUM" VARCHAR2(30),--身份证号
+  "ZHRJG" VARCHAR2(60),--籍贯
+  "ZHRGRSG" VARCHAR2(10),--身高(CM)
+  "ZHRGRTZ" VARCHAR2(10),--体重(斤)
+  "ZHRJKZK" VARCHAR2(20),--健康状况
+  "ZHRYRXX" VARCHAR2(1),--血型
+  "RACKY" VARCHAR2(2),--民族
+  "ZHRFZDJ" VARCHAR2(1),--是否服从调剂
+  "PCODE" VARCHAR2(2),--政治面貌
+  "FAMST" VARCHAR2(1),--婚姻状况
+  "ANZKD" NUMBER(3),--子女个数
+  "ZHRWYSP" VARCHAR2(1),--外语水平
+  "ZHRWYFS" VARCHAR2(16),--外语水平分数
+  "ZHRJSJSP" VARCHAR2(1),--计算机水平
+  "USRID_TEL" VARCHAR2(11),--手机号码
+  "LOCAT_JT" VARCHAR2(80),--家庭住址
+  "LOCAT_HJ" VARCHAR2(80),--户籍地址
+  "LOCAT_XJ" VARCHAR2(80),--现居住地
+  "FANAM" VARCHAR2(80),--紧急联络人
+  "FASEX" VARCHAR2(1),--紧急联络人性别
+  "FGBDT" DATE,--紧急联络人出生日期
+  "USRID_MAIL" VARCHAR2(100),--电子信箱
+  "ZHRZWJS" VARCHAR2(500),--自我介绍
+  "USER_ID" CHAR(36), --用户
+  "FILE_PATH" varchar2(100),--文件路径
+  "TELNR" VARCHAR2(11)
+);
+ALTER TABLE HEM_B_STAFF ADD CONSTRAINT PK_HEM_B_STAFF PRIMARY KEY(ID);
+COMMENT ON TABLE "HEM_B_STAFF" IS '基础信息';
+COMMENT ON COLUMN "HEM_B_STAFF"."NACHN" IS '姓名';
+COMMENT ON COLUMN "HEM_B_STAFF"."GESCH" IS '性别';
+COMMENT ON COLUMN "HEM_B_STAFF"."GBDAT" IS '出生日期';
+COMMENT ON COLUMN "HEM_B_STAFF"."ICNUM" IS '身份证号';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRJG" IS '籍贯';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRGRSG" IS '身高(CM)';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRGRTZ" IS '体重(斤)';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRJKZK" IS '健康状况';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRYRXX" IS '血型';
+COMMENT ON COLUMN "HEM_B_STAFF"."RACKY" IS '民族';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRFZDJ" IS '是否服从调剂';
+COMMENT ON COLUMN "HEM_B_STAFF"."PCODE" IS '政治面貌';
+COMMENT ON COLUMN "HEM_B_STAFF"."FAMST" IS '婚姻状况';
+COMMENT ON COLUMN "HEM_B_STAFF"."ANZKD" IS '子女个数';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRWYSP" IS '外语水平';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRWYFS" IS '外语水平分数';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRJSJSP" IS '计算机水平';
+COMMENT ON COLUMN "HEM_B_STAFF"."USRID_TEL" IS '手机号码';
+COMMENT ON COLUMN "HEM_B_STAFF"."LOCAT_JT" IS '家庭住址';
+COMMENT ON COLUMN "HEM_B_STAFF"."LOCAT_HJ" IS '户籍地址';
+COMMENT ON COLUMN "HEM_B_STAFF"."LOCAT_XJ" IS '现居住地';
+COMMENT ON COLUMN "HEM_B_STAFF"."FANAM" IS '紧急联络人';
+COMMENT ON COLUMN "HEM_B_STAFF"."FASEX" IS '紧急联络人性别';
+COMMENT ON COLUMN "HEM_B_STAFF"."FGBDT" IS '紧急联络人出生日期';
+COMMENT ON COLUMN "HEM_B_STAFF"."USRID_MAIL" IS '电子信箱';
+COMMENT ON COLUMN "HEM_B_STAFF"."ZHRZWJS" IS '自我介绍';
+
+--学历信息(HEM_B_STAFF_EDUCATION) 
+CREATE TABLE HEM_B_STAFF_EDUCATION
+(
+  "ID" CHAR(36) NOT NULL ENABLE,
+  "STAFF_ID" CHAR(36),--
+  "INSTI" VARCHAR2(160),--学校名称
+  "BEGDA" DATE,--开始日期
+  "ENDDA" DATE,--结束日期
+  "SLART" VARCHAR2(2),--学历
+  "ZHRXKZY1" VARCHAR2(40),--学科专业1
+  "ZHRXKZY2" VARCHAR2(40),--学科专业2
+  "ZHRXYJFX" VARCHAR2(40),--研究方向
+  "ZHRDSXM" VARCHAR2(40),
+  "TYPE_ID" VARCHAR2(50),
+  "IS_HIGHEST" NUMBER(3)
+);
+ALTER TABLE HEM_B_STAFF_EDUCATION ADD CONSTRAINT PK_HEM_B_STAFF_EDUCATION PRIMARY KEY(ID);
+ALTER TABLE HEM_B_STAFF_EDUCATION ADD CONSTRAINT FK_HEM_B_STAFF_EDUCATION FOREIGN KEY (STAFF_ID)
+ REFERENCES HEM_B_STAFF (ID) ON DELETE CASCADE ENABLE;
+ 
+COMMENT ON TABLE "HEM_B_STAFF_EDUCATION" IS '学历信息';
+COMMENT ON COLUMN "HEM_B_STAFF_EDUCATION"."INSTI" IS '学校名称';
+COMMENT ON COLUMN "HEM_B_STAFF_EDUCATION"."BEGDA" IS '开始日期';
+COMMENT ON COLUMN "HEM_B_STAFF_EDUCATION"."ENDDA" IS '结束日期';
+COMMENT ON COLUMN "HEM_B_STAFF_EDUCATION"."SLART" IS '学历';
+COMMENT ON COLUMN "HEM_B_STAFF_EDUCATION"."ZHRXKZY1" IS '学科专业1';
+COMMENT ON COLUMN "HEM_B_STAFF_EDUCATION"."ZHRXKZY2" IS '学科专业2';
+COMMENT ON COLUMN "HEM_B_STAFF_EDUCATION"."ZHRXYJFX" IS '研究方向';
+
+--工作经历(HEM_B_STAFF_WORK) 
+CREATE TABLE HEM_B_STAFF_WORK
+(
+  "ID" CHAR(36) NOT NULL ENABLE,
+  "STAFF_ID" CHAR(36),--
+  "BEGDA" DATE,--开始日期
+  "ENDDA" DATE,--结束日期
+  "ZHRXXDW" VARCHAR2(120),--学校_单位
+  "ZHRZYBM" VARCHAR2(60),--专业_部门
+  "ZHRGZZW" VARCHAR2(40),--职务
+  "SLART" VARCHAR2(2)--学历/学位
+);
+ALTER TABLE HEM_B_STAFF_WORK ADD CONSTRAINT PK_HEM_B_STAFF_WORK PRIMARY KEY(ID);
+ALTER TABLE HEM_B_STAFF_WORK ADD CONSTRAINT FK_HEM_B_STAFF_WORK FOREIGN KEY (STAFF_ID)
+ REFERENCES HEM_B_STAFF (ID) ON DELETE CASCADE ENABLE;
+ 
+COMMENT ON TABLE "HEM_B_STAFF_WORK" IS '工作经历';
+COMMENT ON COLUMN "HEM_B_STAFF_WORK"."BEGDA" IS '开始日期';
+COMMENT ON COLUMN "HEM_B_STAFF_WORK"."ENDDA" IS '结束日期';
+COMMENT ON COLUMN "HEM_B_STAFF_WORK"."ZHRXXDW" IS '学校_单位';
+COMMENT ON COLUMN "HEM_B_STAFF_WORK"."ZHRZYBM" IS '专业_部门';
+COMMENT ON COLUMN "HEM_B_STAFF_WORK"."ZHRGZZW" IS '职务';
+COMMENT ON COLUMN "HEM_B_STAFF_WORK"."SLART" IS '学历/学位';
+ 
+--项目信息(HEM_B_STAFF_PROJECT) 
+CREATE TABLE HEM_B_STAFF_PROJECT
+(
+  "ID" CHAR(36) NOT NULL ENABLE,
+  "STAFF_ID" CHAR(36),--
+  "BEGDA" DATE,--开始日期
+  "ENDDA" DATE,--结束日期
+  "ZHRXMMC" VARCHAR2(60),--项目名称
+  "ZHRXMLBLY" VARCHAR2(60),--项目类别_来源
+  "ZHRXMJF" VARCHAR2(20),--经费(万)
+  "ZHRXMPM" VARCHAR2(20)--本人排名
+);
+ALTER TABLE HEM_B_STAFF_PROJECT ADD CONSTRAINT PK_HEM_B_STAFF_PROJECT PRIMARY KEY(ID);
+ALTER TABLE HEM_B_STAFF_PROJECT ADD CONSTRAINT FK_HEM_B_STAFF_PROJECT FOREIGN KEY (STAFF_ID)
+ REFERENCES HEM_B_STAFF (ID) ON DELETE CASCADE ENABLE;
+COMMENT ON TABLE "HEM_B_STAFF_PROJECT" IS '项目信息';
+COMMENT ON COLUMN "HEM_B_STAFF_PROJECT"."BEGDA" IS '开始日期';
+COMMENT ON COLUMN "HEM_B_STAFF_PROJECT"."ENDDA" IS '结束日期';
+COMMENT ON COLUMN "HEM_B_STAFF_PROJECT"."ZHRXMMC" IS '项目名称';
+COMMENT ON COLUMN "HEM_B_STAFF_PROJECT"."ZHRXMLBLY" IS '项目类别_来源';
+COMMENT ON COLUMN "HEM_B_STAFF_PROJECT"."ZHRXMJF" IS '经费(万)';
+COMMENT ON COLUMN "HEM_B_STAFF_PROJECT"."ZHRXMPM" IS '本人排名';
+ 
+ --文章信息(HEM_B_STAFF_ESSAY) 
+CREATE TABLE HEM_B_STAFF_ESSAY
+(
+  "ID" CHAR(36) NOT NULL ENABLE,
+  "STAFF_ID" CHAR(36),--
+  "ZHRWZMC" VARCHAR2(60),--文章名称
+  "BEGDA" DATE,--出版时间
+  "ZHRCBKW" VARCHAR2(60),--出版刊物
+  "ZHRCBKH" VARCHAR2(40),--刊号
+  "ZHRKWJB" VARCHAR2(1),--刊物级别
+  "ZHRYXYZ" VARCHAR2(40),--影响因子
+  "ZHRBRMP" VARCHAR2(1),--本人排名
+  "ZHRFBZT" VARCHAR2(2) --发表状态
+);
+ALTER TABLE HEM_B_STAFF_ESSAY ADD CONSTRAINT PK_HEM_B_STAFF_ESSAY PRIMARY KEY(ID);
+ALTER TABLE HEM_B_STAFF_ESSAY ADD CONSTRAINT FK_HEM_B_STAFF_ESSAY FOREIGN KEY (STAFF_ID)
+ REFERENCES HEM_B_STAFF (ID) ON DELETE CASCADE ENABLE;
+COMMENT ON TABLE "HEM_B_STAFF_ESSAY" IS '文章信息';
+COMMENT ON COLUMN "HEM_B_STAFF_ESSAY"."ZHRWZMC" IS '文章名称';
+COMMENT ON COLUMN "HEM_B_STAFF_ESSAY"."BEGDA" IS '出版时间';
+COMMENT ON COLUMN "HEM_B_STAFF_ESSAY"."ZHRCBKW" IS '出版刊物';
+COMMENT ON COLUMN "HEM_B_STAFF_ESSAY"."ZHRCBKH" IS '刊号';
+COMMENT ON COLUMN "HEM_B_STAFF_ESSAY"."ZHRKWJB" IS '刊物级别';
+COMMENT ON COLUMN "HEM_B_STAFF_ESSAY"."ZHRYXYZ" IS '影响因子';
+COMMENT ON COLUMN "HEM_B_STAFF_ESSAY"."ZHRBRMP" IS '本人排名';
+ 
+--投放简历 (HEM_B_STAFF_APPLY)
+CREATE TABLE HEM_B_STAFF_APPLY
+(
+  "ID" CHAR(36) NOT NULL ENABLE,
+  "POSTER_ID" CHAR(36),--招聘广告
+  "STATUS" NUMBER(3), --投放状态
+  "STAFF_ID" CHAR(36), 
+	"CREATE_DATE" DATE
+);
+
+ALTER TABLE HEM_B_STAFF_APPLY ADD CONSTRAINT PK_HEM_B_STAFF_APPLY PRIMARY KEY(ID);
+
+--用户登录(HEM_B_USER_LOGIN)
+CREATE TABLE HEM_B_USER_LOGIN
+(
+  "ID" CHAR(36) NOT NULL ENABLE,
+  "ACCOUNT" VARCHAR2(11), --登录名
+  "PASSWORD" VARCHAR2(50),--密码
+  "FLAG" NUMBER(3),
+  "IS_USABL" NUMBER(1)
+);
+ALTER TABLE HEM_B_USER_LOGIN ADD CONSTRAINT PK_HEM_B_USER_LOGIN PRIMARY KEY(ID);
+
+--用户信息(HEM_B_USER)
+CREATE TABLE HEM_B_USER
+(
+  "ID" CHAR(36) NOT NULL ENABLE,
+  "USER_LOGIN_ID" CHAR(36),--用户
+  "NAME" VARCHAR2(50), --姓名
+  "MOBILE" VARCHAR2(11),--手机号码
+  "EMAIL"  VARCHAR2(50),--电子邮箱
+  "CREATE_DATE" DATE -- 创建日期
+);
+ALTER TABLE HEM_B_USER ADD CONSTRAINT PK_HEM_B_USER PRIMARY KEY(ID);
+
+--管理类别数据
+CREATE TABLE SYS_DATA_TYPE
+(
+    ID CHAR(36),
+    CODE VARCHAR(50),
+    NAME VARCHAR(50),
+    PARENT_ID CHAR(36)，
+    IS_USABL NUMBER(1)
+)
+ALTER TABLE SYS_DATA_TYPE ADD CONSTRAINT PK_SYS_DATA_TYPE PRIMARY KEY(ID);
+ALTER TABLE SYS_DATA_TYPE ADD CONSTRAINT FK_SYS_DATA_TYPE FOREIGN KEY (PARENT_ID)
+ REFERENCES SYS_DATA_TYPE (ID) ON DELETE CASCADE ENABLE;
+ 
+--短信
+CREATE TABLE HEM_B_PHONE_MSSAGE
+(
+  "ID" CHAR(36) NOT NULL ENABLE, 
+  "APPLY_ID" char(36),--简历ID
+  "SEND_PHONE" VARCHAR2(11),
+  "SEND_TIME" DATE,--发送时间
+  "OVERDUE_TIME" DATE,--过期时间
+  "REPLY_STATUS" VARCHAR2(50), --回复状态
+  "ACCEPT_TIME" DATE,--短信接收返回时间
+  "MAC" VARCHAR2(50),
+  "CONTENT"  VARCHAR2(200),--内容
+  "IS_SEND" NUMBER(1),--发送状态
+  "STATUS" NUMBER(3),--状态 1、注册 2、找回密码 3、邀请面试
+  "SEND_ID" CHAR(36),
+  "APPLY_STATUS" NUMBER(3)
+);
+
+ALTER TABLE HEM_B_PHONE_MSSAGE ADD CONSTRAINT PK_HEM_B_PHONE_MSSAGE PRIMARY KEY(ID);
+
+CREATE TABLE HEM_B_PHONE_CALLBARK
+(
+  "ID" CHAR(36) NOT NULL ENABLE, 
+  "MOBILE" VARCHAR2(50), --发布者
+  "TASKID" VARCHAR2(50), --资料来源
+  "CONTENT" VARCHAR2(500), --公告时间
+  "INSERTTIME" DATE, --结束日期
+  "APPLY_ID" CHAR(36)
+)
+/
+ALTER TABLE HEM_B_PHONE_CALLBARK ADD CONSTRAINT PK_HEM_B_PHONE_CALLBARK PRIMARY KEY(ID);
+
+//真实人员信息
+CREATE TABLE HEM_B_STAFF_REAL
+(
+  "ID" CHAR(36) NOT NULL ENABLE, 
+  "REAL_PHONE" VARCHAR2(11),--电话号码
+  "REAL_NAME" VARCHAR2(120),--姓名
+  "REAL_ZHRGRSG" NUMBER(3),--身高
+  "REAL_ZHRGRTZ" NUMBER(5,2),--体重
+  "REAL_ZHRSLJZ" NUMBER(2,1),--视力
+  "WRITTEN_ENGLISH" NUMBER(5,2),--笔试英语
+  "WRITTEN_THEORY" NUMBER(5,2),--笔试理论
+  "OPERATOR_ONE" NUMBER(5,2),--操作能力
+  "STATUS" NUMBER(3),
+  "USER_ID" CHAR(36),
+  "STAFF_ID" CHAR(36),
+  "NUM" NUMBER(3),
+  "APPLY_ID" CHAR(36),
+  "ERRORMESSAGE" VARCHAR2(3000),
+  "MODIFY_TIME" DATE,--更新时间
+  "CREATE_TIME" DATE --创建日期
+);
+
+ALTER TABLE HEM_B_STAFF_REAL ADD CONSTRAINT PK_HEM_B_STAFF_REAL PRIMARY KEY(ID);
+
+
+
+insert into SYS_DATA_TYPE
+--select 'HEM_1015','1015','动态条件','',1 from dual union all
+select sys_guid(),'NACHN|V','姓名','HEM_1015',1 from dual union all
+select sys_guid(),'SEX|V','性别','HEM_1015',1 from dual union all
+select sys_guid(),'GBDAT|D','出生年月','HEM_1015',1 from dual union all
+select sys_guid(),'ZHRGRSG|I','身高','HEM_1015',1 from dual union all
+select sys_guid(),'REAL_ZHRGRSG|I','真实身高','HEM_1015',1 from dual union all
+select sys_guid(),'ZHRGRTZ|I','体重','HEM_1015',1 from dual union all
+select sys_guid(),'REAL_ZHRGRTZ|I','真实体重','HEM_1015',1 from dual union all
+select sys_guid(),'REAL_ZHRSLJZ|I','真实视力','HEM_1015',1 from dual union all
+select sys_guid(),'ZHRTZGG|I','高考成绩','HEM_1015',1 from dual union all
+select sys_guid(),'USRID_TEL|V','手机号码','HEM_1015',1 from dual union all
+select sys_guid(),'DT_HH_EDUCATION_NAME|V','最高学历','HEM_1015',1 from dual union all
+select sys_guid(),'FIRSTCHOICE|V','第一志愿','HEM_1015',1 from dual union all
+select sys_guid(),'WRITTEN_ENGLISH|I','笔试英语','HEM_1015',1 from dual union all
+select sys_guid(),'WRITTEN_THEORY|I','笔试理论','HEM_1015',1 from dual union all
+select sys_guid(),'WRITTEN_TOTAL|I','笔试总分','HEM_1015',1 from dual union all
+select sys_guid(),'OPERATOR_ONE|I','操作能力','HEM_1015',1 from dual union all
+select sys_guid(),'ED_TYPE_NAME|I','学科类型','HEM_1015',1 from dual;
+
+--SELECT * FROM SYS_DATA_TYPE WHERE PARENT_ID = 'HEM_1015'
+--DELETE FROM SYS_DATA_TYPE WHERE PARENT_ID = 'HEM_1015'
+
+insert into SYS_DATA_TYPE
+--select 'HEM_1016','HEM_1016','执业类型','',1 from dual union all
+select sys_guid(),'T01','临床','HEM_1016',1 from dual union all
+select sys_guid(),'T02','中医','HEM_1016',1 from dual union all
+select sys_guid(),'T03','公共卫生','HEM_1016',1 from dual union all
+select sys_guid(),'T04','口腔','HEM_1016',1 from dual;
+
+insert into SYS_DATA_TYPE
+select 'HEM_1013','HEM_1013','管理分页','',1 from dual union all
+select sys_guid(),'50','50','HEM_1013',1 from dual union all
+select sys_guid(),'100','100','HEM_1013',1 from dual union all
+select sys_guid(),'300','300','HEM_1013',1 from dual union all
+select sys_guid(),'500','500','HEM_1013',1 from dual union all
+select sys_guid(),'800','800','HEM_1013',1 from dual union all
+select sys_guid(),'1000','1000','HEM_1013',1 from dual;
+
+insert into SYS_DATA_TYPE
+select 'HEM_1014','HEM_1014','管理分页','',1 from dual union all
+select sys_guid(),'50','50','HEM_1014',1 from dual union all
+select sys_guid(),'100','100','HEM_1014',1 from dual union all
+select sys_guid(),'300','300','HEM_1014',1 from dual union all
+select sys_guid(),'500','500','HEM_1014',1 from dual union all
+select sys_guid(),'800','800','HEM_1014',1 from dual union all
+select sys_guid(),'1000','1000','HEM_1014',1 from dual;
+
+insert into SYS_DATA_TYPE
+select 'HEM_1001','1001','血型','',1 from dual union all
+select 'HEM_1002','1002','政治面貌','',1 from dual union all
+select 'HEM_1003','1003','外语水平','',1 from dual union all
+select 'HEM_1004','1004','计算机水平','',1 from dual union all
+select 'HEM_1005','1005','学历','',1 from dual union all
+select 'HEM_1006','1006','刊物级别','',1 from dual union all
+select 'HEM_1007','1007','本人排名','',1 from dual union all
+select 'HEM_1008','1008','民族','',1 from dual union all
+select 'HEM_1009','1009','婚姻状况','',1 from dual union all
+select 'HEM_1010','1010','简历状态','',1 from dual union all
+select 'HEM_1011','1011','发表状态','',1 from dual;
+
+insert into SYS_DATA_TYPE
+select sys_guid(),'1','第一作者','HEM_1007',1 from dual union all
+select sys_guid(),'2','共同第一作者','HEM_1007',1 from dual union all
+select sys_guid(),'3','通讯作者','HEM_1007',1 from dual union all
+select sys_guid(),'4','共同通讯作者','HEM_1007',1 from dual union all
+
+select sys_guid(),'0','未处理','HEM_1010',1 from dual union all
+select sys_guid(),'1','简历通过','HEM_1010',1 from dual union all
+select sys_guid(),'2','安排面试','HEM_1010',1 from dual union all
+select sys_guid(),'3','已拒绝','HEM_1010',1 from dual union all
+select sys_guid(),'4','已完成','HEM_1010',1 from dual union all
+select sys_guid(),'5','传输成功','HEM_1010',1 from dual union all
+
+
+select sys_guid(),'1','权威','HEM_1006',1 from dual union all
+select sys_guid(),'2','核心','HEM_1006',1 from dual union all
+select sys_guid(),'3','一般','HEM_1006',1 from dual union all    
+select sys_guid(),'4','SCI-A','HEM_1006',1 from dual union all    
+select sys_guid(),'5','SCI-B','HEM_1006',1 from dual union all    
+select sys_guid(),'6','SCI-C','HEM_1006',1 from dual union all            
+select sys_guid(),'7','其他','HEM_1006',1 from dual union all
+
+
+select sys_guid(),'10','博士','HEM_1005',1 from dual union all
+select sys_guid(),'11','硕士','HEM_1005',1 from dual union all
+select sys_guid(),'20','本科','HEM_1005',1 from dual union all
+select sys_guid(),'21','专科','HEM_1005',1 from dual union all
+select sys_guid(),'22','中专','HEM_1005',1 from dual union all
+select sys_guid(),'23','高中','HEM_1005',1 from dual union all
+select sys_guid(),'25','职高','HEM_1005',1 from dual union all
+select sys_guid(),'26','初中','HEM_1005',1 from dual union all
+select sys_guid(),'27','技校','HEM_1005',1 from dual union all
+select sys_guid(),'50','初中及以下','HEM_1005',1 from dual  union all
+
+
+select sys_guid(),'1','一级','HEM_1004',1 from dual union all
+select sys_guid(),'2','二级','HEM_1004',1 from dual union all
+select sys_guid(),'3','三级','HEM_1004',1 from dual union all
+select sys_guid(),'4','四级','HEM_1004',1 from dual union all
+
+
+select sys_guid(),'1','CET-4','HEM_1003',1 from dual union all
+select sys_guid(),'2','CET-6','HEM_1003',1 from dual union all
+select sys_guid(),'3','专业8级','HEM_1003',1 from dual union all
+select sys_guid(),'4','托福','HEM_1003',1 from dual union all
+select sys_guid(),'5','GRE','HEM_1003',1 from dual union all
+select sys_guid(),'6','PETS-5','HEM_1003',1 from dual union all
+select sys_guid(),'7','德语','HEM_1003',1 from dual union all
+
+
+select sys_guid(),'0','未婚','HEM_1009',1 from dual union all
+select sys_guid(),'1','已婚','HEM_1009',1 from dual union all
+select sys_guid(),'2','离异','HEM_1009',1 from dual union all
+
+select sys_guid(),'01','中国共产党党员','HEM_1002',1 from dual union all
+select sys_guid(),'02','中国共产党预备党员','HEM_1002',1 from dual union all
+select sys_guid(),'03','中国共产主义青年团团员','HEM_1002',1 from dual union all
+select sys_guid(),'04','成员/中国国民党革命委员会','HEM_1002',1 from dual union all
+select sys_guid(),'05','中国民主同盟盟员','HEM_1002',1 from dual union all
+select sys_guid(),'06','成员/中国民主建国会','HEM_1002',1 from dual union all
+select sys_guid(),'07','成员/中国民主促进会','HEM_1002',1 from dual union all
+select sys_guid(),'08','党员/中国农工民主党','HEM_1002',1 from dual union all
+select sys_guid(),'09','中国致公党党员','HEM_1002',1 from dual union all
+select sys_guid(),'10','九三学社社员','HEM_1002',1 from dual union all
+select sys_guid(),'11','台湾民主自治同盟盟员','HEM_1002',1 from dual union all
+select sys_guid(),'12','无党派民主人士','HEM_1002',1 from dual union all
+select sys_guid(),'13','群众','HEM_1002',1 from dual union all
+
+
+select sys_guid(),'1','A','HEM_1001',1 from dual union all
+select sys_guid(),'2','B','HEM_1001',1 from dual union all
+select sys_guid(),'3','AB','HEM_1001',1 from dual union all
+select sys_guid(),'4','O','HEM_1001',1 from dual union all
+
+select sys_guid(),'HA','汉族','HEM_1008',1 from dual union all
+select sys_guid(),'AC','阿昌族','HEM_1008',1 from dual union all
+select sys_guid(),'BA','白族','HEM_1008',1 from dual union all
+select sys_guid(),'BL','布朗族','HEM_1008',1 from dual union all
+select sys_guid(),'BN','保安族','HEM_1008',1 from dual union all
+select sys_guid(),'BY','布依族','HEM_1008',1 from dual union all
+select sys_guid(),'CS','朝鲜族','HEM_1008',1 from dual union all
+select sys_guid(),'DA','傣族','HEM_1008',1 from dual union all
+select sys_guid(),'DE','德族','HEM_1008',1 from dual union all
+select sys_guid(),'DO','侗族','HEM_1008',1 from dual union all
+select sys_guid(),'DR','独龙族','HEM_1008',1 from dual union all
+select sys_guid(),'DU','达翰尔族','HEM_1008',1 from dual union all
+select sys_guid(),'DX','东乡族','HEM_1008',1 from dual union all
+select sys_guid(),'EE','维吾尔族','HEM_1008',1 from dual union all
+select sys_guid(),'EW','鄂温克族','HEM_1008',1 from dual union all
+select sys_guid(),'GI','京族','HEM_1008',1 from dual union all
+select sys_guid(),'GL','仡佬族','HEM_1008',1 from dual union all
+select sys_guid(),'GS','高山族','HEM_1008',1 from dual union all
+select sys_guid(),'HU','回族','HEM_1008',1 from dual union all
+select sys_guid(),'HZ','赫哲族','HEM_1008',1 from dual union all
+select sys_guid(),'JN','基诺族','HEM_1008',1 from dual union all
+select sys_guid(),'JP','景颇族','HEM_1008',1 from dual union all
+select sys_guid(),'KG','柯尔克孜族','HEM_1008',1 from dual union all
+select sys_guid(),'KZ','哈萨克族','HEM_1008',1 from dual union all
+select sys_guid(),'LB','珞巴族','HEM_1008',1 from dual union all
+select sys_guid(),'LH','拉祜族','HEM_1008',1 from dual union all
+select sys_guid(),'LI','黎族','HEM_1008',1 from dual union all
+select sys_guid(),'LS','傈僳族','HEM_1008',1 from dual union all
+select sys_guid(),'MA','满族','HEM_1008',1 from dual union all
+select sys_guid(),'MB','门巴族','HEM_1008',1 from dual union all
+select sys_guid(),'MG','蒙古族','HEM_1008',1 from dual union all
+select sys_guid(),'MH','苗族','HEM_1008',1 from dual union all
+select sys_guid(),'ML','仫佬族','HEM_1008',1 from dual union all
+select sys_guid(),'MN','毛南族','HEM_1008',1 from dual union all
+select sys_guid(),'NU','怒族','HEM_1008',1 from dual union all
+select sys_guid(),'NX','纳西族','HEM_1008',1 from dual union all
+select sys_guid(),'OR','鄂伦春族','HEM_1008',1 from dual union all
+select sys_guid(),'PM','普米族','HEM_1008',1 from dual union all
+select sys_guid(),'QI','羌族','HEM_1008',1 from dual union all
+select sys_guid(),'RS','俄罗斯族','HEM_1008',1 from dual union all
+select sys_guid(),'SH','畲族','HEM_1008',1 from dual union all
+select sys_guid(),'SL','萨拉族','HEM_1008',1 from dual union all
+select sys_guid(),'SU','水族','HEM_1008',1 from dual union all
+select sys_guid(),'TA','塔吉克族','HEM_1008',1 from dual union all
+select sys_guid(),'TJ','土家族','HEM_1008',1 from dual union all
+select sys_guid(),'TT','塔塔尔族','HEM_1008',1 from dual union all
+select sys_guid(),'TU','土族','HEM_1008',1 from dual union all
+select sys_guid(),'UG','维吾尔族','HEM_1008',1 from dual union all
+select sys_guid(),'UZ','乌孜别克族','HEM_1008',1 from dual union all
+select sys_guid(),'VA','佤族','HEM_1008',1 from dual union all
+select sys_guid(),'XB','锡伯族','HEM_1008',1 from dual union all
+select sys_guid(),'YA','瑶族','HEM_1008',1 from dual union all
+select sys_guid(),'YG','裕固族','HEM_1008',1 from dual union all
+select sys_guid(),'YI','彝族','HEM_1008',1 from dual union all
+select sys_guid(),'ZA','藏族','HEM_1008',1 from dual union all
+select sys_guid(),'ZH','壮族','HEM_1008',1 from dual union all
+
+select sys_guid(),'01','已发表','HEM_1011',1 from dual union all
+select sys_guid(),'02','待发布','HEM_1011',1 from dual;
+
+
+INSERT INTO sys_data_type
+SELECT 'HEM_1017','HEM_1017','学科类型',null,1 FROM DUAL UNION ALL
+SELECT 'HEM_10170001','HEM_10170001','专业型','HEM_1017',1 FROM DUAL UNION ALL
+SELECT 'HEM_10170002','HEM_10170002','学术型','HEM_1017',1 FROM DUAL;
+
+/
+CREATE OR REPLACE VIEW V_USER_LOGIN_INFO AS
+SELECT
+    L.ID,L.ACCOUNT,L.PASSWORD,L.FLAG,L.IS_USABL,U.ID USER_ID,U.NAME,
+    U.MOBILE,U.EMAIL ,U.CREATE_DATE
+FROM HEM_B_USER_LOGIN L INNER JOIN HEM_B_USER U ON L.ID = U.USER_LOGIN_ID;
+/
+CREATE OR REPLACE VIEW V_HEM_B_STAFF_APPLY AS
+SELECT
+    A.ID,--申请ID
+    A.CREATE_DATE,
+    S.ID STAFF_ID,
+    S.NACHN,--姓名
+    S.GBDAT,--出生日期
+    S.GESCH,--性别
+    S.ZHRJG,--籍贯
+    SE.INSTI,--学校
+    ST_E.NAME SLART_NAME, --学历
+    P.ID POSTER_ID,--招聘广告ID
+    P.TITLE,--招聘广告标题
+    P.RECRUIT_POSITION,--申请职位
+    P.PUBLISH_DATE,--发布日期
+    P.END_DATE,--截止日期
+    ST_S.NAME STATUS_NAME,--状态名称
+    to_number(A.STATUS) STATUS, --
+    to_number(P.STATUS) POSTER_STATUS,
+    MSG.REPLY_STATUS,
+    S.USRID_TEL,
+    S.USRID_MAIL,
+    MSG.ID MSSAGE_ID,
+    MSG.IS_SEND,
+    VBK.CONTENT
+    --CASE WHEN length(VBK.CONTENT) >2 THEN substr(VBK.CONTENT,3,1) ELSE '' END CONTENT
+    /*CASE WHEN A.STATUS = 2 THEN VBK.CONTENT ELSE NULL END CONTENT,
+    CASE WHEN A.STATUS = 2 THEN VBK.INSERTTIME ELSE NULL END INSERTTIME*/
+FROM
+    HEM_B_STAFF_APPLY A
+    INNER JOIN HEM_B_STAFF S ON
+        S.ID = A.STAFF_ID
+    INNER JOIN HEM_B_RECRUIT_POSTER P ON
+        P.ID = A.POSTER_ID
+    LEFT JOIN (
+         SELECT STAFF_ID,INSTI,SLART FROM HEM_B_STAFF_EDUCATION WHERE IS_HIGHEST = 1
+         /*SELECT E.STAFF_ID,E.INSTI,E.SLART FROM HEM_B_STAFF_EDUCATION E WHERE EXISTS(
+             SELECT G.STAFF_ID FROM (SELECT STAFF_ID,MAX(ENDDA) ENDDA FROM HEM_B_STAFF_EDUCATION GROUP BY STAFF_ID) G WHERE
+             G.STAFF_ID = E.STAFF_ID AND E.ENDDA = G.ENDDA
+         )*/
+    ) SE ON SE.STAFF_ID = S.ID
+    LEFT JOIN SYS_DATA_TYPE ST_E ON
+        ST_E.PARENT_ID = 'HEM_1005' AND
+        ST_E.CODE = SE.SLART
+    LEFT JOIN SYS_DATA_TYPE ST_S ON
+        ST_S.PARENT_ID = 'HEM_1010' AND
+        ST_S.CODE = A.STATUS
+    LEFT JOIN HEM_B_PHONE_MSSAGE MSG ON
+        MSG.APPLY_ID = A.ID AND
+        MSG.STATUS = 3
+    LEFT JOIN (
+        SELECT CBK.MOBILE,CBK.APPLY_ID,CBK.INSERTTIME,CBK.CONTENT FROM HEM_B_PHONE_CALLBARK CBK INNER JOIN (
+            SELECT MOBILE,APPLY_ID,MAX(INSERTTIME) INSERTTIME FROM HEM_B_PHONE_CALLBARK GROUP BY MOBILE,APPLY_ID
+        ) MBK ON CBK.MOBILE = MBK.MOBILE AND CBK.INSERTTIME = MBK.INSERTTIME
+    ) VBK ON VBK.MOBILE = S.USRID_TEL AND VBK.APPLY_ID = A.ID
+ WHERE
+     P.STATUS = 1 OR P.STATUS = 2;
+/
+
+CREATE OR REPLACE VIEW V_HEM_B_RECRUIT_POSTER AS
+SELECT
+    ID,
+    PUBLISHER,
+    DATA_SOURCE,
+    PUBLISH_DATE,
+    END_DATE,
+    CREATE_DATE,
+    TITLE,
+    STATUS,
+    USER_ID,
+    CONTENT,
+    REMARK,
+    RECRUIT_POSITION ,
+    (SELECT COUNT(*) FROM HEM_B_STAFF_APPLY A WHERE A.POSTER_ID = P.ID) ALLCOUNT,--全部
+    (SELECT COUNT(*) FROM HEM_B_STAFF_APPLY A WHERE A.POSTER_ID = P.ID AND A.STATUS = 0) WCL,--未处理
+    (SELECT COUNT(*) FROM HEM_B_STAFF_APPLY A WHERE A.POSTER_ID = P.ID AND A.STATUS = 1) YTG,--简历通过
+    (SELECT COUNT(*) FROM HEM_B_STAFF_APPLY A WHERE A.POSTER_ID = P.ID AND A.STATUS = 2) YMS,--安排面试
+    (SELECT COUNT(*) FROM HEM_B_STAFF_APPLY A WHERE A.POSTER_ID = P.ID AND A.STATUS = 3) YJJ,--已拒绝
+    (SELECT COUNT(*) FROM HEM_B_STAFF_APPLY A WHERE A.POSTER_ID = P.ID AND A.STATUS IN(4,5)) YWC,--已完成
+    (SELECT COUNT(*) FROM HEM_B_STAFF_APPLY A WHERE A.POSTER_ID = P.ID AND A.STATUS = 5) YCS--传输成功
+FROM HEM_B_RECRUIT_POSTER P WHERE STATUS = 1 OR STATUS = 2;
+/
+
+CREATE OR REPLACE VIEW V_HEM_B_PHONE_CALLBARK AS
+SELECT
+    PC.ID,
+    SF.NACHN,
+    PC.MOBILE,
+    PC.TASKID,
+    PC.CONTENT,
+    PC.INSERTTIME,
+    HRP.RECRUIT_POSITION,
+    PC.APPLY_ID
+FROM
+    HEM_B_PHONE_CALLBARK PC
+    INNER JOIN HEM_B_STAFF SF ON
+        SF.USRID_TEL = PC.MOBILE
+    INNER JOIN HEM_B_STAFF_APPLY HSA ON
+        PC.APPLY_ID = HSA.ID
+    INNER JOIN HEM_B_RECRUIT_POSTER HRP ON
+        HRP.ID = HSA.POSTER_ID;
+        
+CREATE VIEW V_HEM_APPLY_PHONE_MSSAGE
+AS
+SELECT 
+  SA.ID,
+  RP.TITLE,
+  RP.RECRUIT_POSITION,
+  SF.NACHN,
+  PM.SEND_PHONE,
+  PM.SEND_TIME,
+  PM.CONTENT,
+  PM.APPLY_STATUS,
+  DT.NAME APPLY_STATUS_NAME
+FROM 
+    HEM_B_PHONE_MSSAGE PM
+    INNER JOIN HEM_B_STAFF_APPLY SA
+      ON PM.APPLY_ID = SA.ID
+    INNER JOIN HEM_B_RECRUIT_POSTER RP
+      ON RP.ID = SA.POSTER_ID
+    INNER JOIN HEM_B_STAFF SF
+      ON SF.ID = SA.STAFF_ID
+    INNER JOIN SYS_DATA_TYPE DT 
+      ON DT.PARENT_ID = 'HEM_1010' AND
+         DT.CODE = PM.APPLY_STATUS
+WHERE
+    PM.STATUS = 3;
+    
+    
+    
+CREATE VIEW V_HEM_B_STAFF_APPLY_ALL
+AS
+    SELECT 
+        A.ID,
+        A.STATUS,
+        A.POSTER_ID,
+        A.STAFF_TYPE_ID,
+        SF.ID STAFF_ID,
+        STY.IS_NURSE,
+        STY.TYPE_ID
+    FROM
+        HEM_B_STAFF_APPLY A
+        INNER JOIN HEM_B_STAFF_TYPE STY
+          ON STY.ID = A.STAFF_TYPE_ID
+        INNER JOIN HEM_B_STAFF SF 
+          ON SF.ID = STY.STAFF_ID
+    
